@@ -1,8 +1,9 @@
-import { initializeApp } from 'firebase/app'
-import { getFirestore } from 'firebase/firestore'
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
 
 export default defineNuxtPlugin((nuxtApp) => {
-  const config = useRuntimeConfig()
+  const config = useRuntimeConfig();
 
   const firebaseConfig = {
     apiKey: config.public.firebaseApiKey,
@@ -10,15 +11,18 @@ export default defineNuxtPlugin((nuxtApp) => {
     projectId: config.public.firebaseProjectId,
     storageBucket: config.public.firebaseStorageBucket,
     messagingSenderId: config.public.firebaseMessagingSenderId,
-    appId: config.public.firebaseAppId
-  }
+    appId: config.public.firebaseAppId,
+    measurementId: "G-KYEV6WW3GJ"
+  };
 
-  const app = initializeApp(firebaseConfig)
-  const firestore = getFirestore(app)
+  // Initialize Firebase App
+  const app = initializeApp(firebaseConfig);
 
-  return {
-    provide: {
-      firestore
-    }
-  }
-})
+  // Initialize Firestore and Storage
+  const firestore = getFirestore(app);
+  const storage = getStorage(app);
+
+  // Provide Firebase services globally in your app
+  nuxtApp.provide('firestore', firestore);
+  nuxtApp.provide('storage', storage);
+});
