@@ -27,6 +27,12 @@
                 >Lav et tilbud</NuxtLink
               >
             </li>
+
+            <li class="mb-2">
+              <a href="https://bowlingcentre.dk" class="hover:text-white"
+                >Bowlingcentre.dk</a
+              >
+            </li>
           </ul>
         </div>
         <div>
