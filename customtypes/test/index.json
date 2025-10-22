@@ -1,0 +1,37 @@
+{
+  "format": "custom",
+  "id": "test",
+  "label": "test",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "faq": {
+              "type": "SharedSlice"
+            },
+            "cta": {
+              "type": "SharedSlice"
+            },
+            "contactform": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "test2": {
+      "awdawdawd": {
+        "type": "Text",
+        "config": {
+          "label": "awdawdawd",
+          "placeholder": "wad"
+        }
+      }
+    }
+  }
+}

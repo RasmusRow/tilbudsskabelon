@@ -1,0 +1,25 @@
+{
+  "format": "custom",
+  "id": "pricing-plan",
+  "json": {
+    "Main": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": "pricing-plan Title"
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": "pricing-plan description"
+        }
+      }
+    }
+  },
+  "label": "pricing-plan",
+  "repeatable": true,
+  "status": true
+}

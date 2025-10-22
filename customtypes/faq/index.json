@@ -1,0 +1,25 @@
+{
+  "format": "custom",
+  "id": "faq",
+  "json": {
+    "Main": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": "faq Title"
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": "faq description"
+        }
+      }
+    }
+  },
+  "label": "faq",
+  "repeatable": true,
+  "status": true
+}

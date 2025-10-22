@@ -1,0 +1,25 @@
+{
+  "format": "custom",
+  "id": "contact-form",
+  "json": {
+    "Main": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": "contact-form Title"
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": "contact-form description"
+        }
+      }
+    }
+  },
+  "label": "contact-form",
+  "repeatable": true,
+  "status": true
+}

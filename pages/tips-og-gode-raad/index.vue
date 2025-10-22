@@ -1,16 +1,16 @@
 <template>
   <div class="container mx-auto py-8 px-4">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <NuxtLink :to="post.link" v-for="post in posts" :key="post.id">
+      <NuxtLink :to="`/tips-og-gode-raad/${guide.uid}`" v-for="guide in guides" :key="guide.id">
         <div class="shadow-lg rounded-3xl overflow-hidden bg-white">
-          <img
-            :src="post.image"
-            :alt="post.title"
+          <PrismicImage
+            v-if="guide.data.featured_image"
+            :field="guide.data.featured_image"
             class="w-full h-48 object-cover"
           />
           <div class="p-6">
-            <h2 class="text-lg font-semibold mb-2">{{ post.title }}</h2>
-            <p class="text-gray-600">{{ post.excerpt }}</p>
+            <h2 class="text-lg font-semibold mb-2">{{ guide.data.title }}</h2>
+            <p class="text-gray-600">{{ guide.data.excerpt }}</p>
           </div>
         </div>
       </NuxtLink>
@@ -19,31 +19,17 @@
 </template>
 
 <script setup>
-const posts = [
-  {
-    id: 1,
-    title: "Sådan skriver du det perfekte tilbud",
-    excerpt: "Lær hvordan du kan skrive tilbud, der fænger og vinder kunder...",
-    image: "/images/skriv-et-perfekt-tilbud.png",
-    link: "/tips-og-gode-raad/saadan-skriver-du-det-perfekte-tilbud",
-  },
-  {
-    id: 2,
-    title: "Lav et godt håndværkertilbud",
-    excerpt:
-      "Lær hvordan du kan skrive håndværkertilbud, der fænger og vinder kunder...",
-    image: "/images/handvaerker-tilbud.png",
-    link: "/tips-og-gode-raad/saadan-skriver-du-et-godt-handvaerkertilbud",
-  },
-];
+const { getGuides } = usePrismicData()
+
+// Fetch guides from Prismic
+const { data: guides } = await useAsyncData('guides', () => getGuides('tips'))
 
 useHead({
   title: "Tips & gode råd til at få succes med tilbud",
   meta: [
     {
       name: "description",
-      content:
-        "Få tips og gode råd til at skrive det perfekte tilbud, forbedre din markedsføring og optimere dine resultater. Vi tilbyder ressourcer og vejledning til at skabe bedre tilbud.",
+      content: "Få tips og gode råd til at skrive det perfekte tilbud, forbedre din markedsføring og optimere dine resultater. Vi tilbyder ressourcer og vejledning til at skabe bedre tilbud.",
     },
     {
       property: "og:title",
@@ -51,8 +37,7 @@ useHead({
     },
     {
       property: "og:description",
-      content:
-        "Læs vores tips til at skrive gode tilbud, markedsføring og få flere kunder.",
+      content: "Læs vores tips til at skrive gode tilbud, markedsføring og få flere kunder.",
     },
     {
       property: "og:image",

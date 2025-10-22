@@ -1,0 +1,231 @@
+{
+  "id": "pricing_plan",
+  "name": "Pricing Plan",
+  "description": "Pricing plans and packages",
+  "icon": "attach_money",
+  "tabs": [
+    {
+      "key": "content",
+      "displayName": "Content"
+    },
+    {
+      "key": "features",
+      "displayName": "Features"
+    },
+    {
+      "key": "settings",
+      "displayName": "Settings"
+    }
+  ],
+  "fields": [
+    {
+      "id": "name",
+      "name": "Name",
+      "type": "Text",
+      "config": {
+        "label": "Plan Name",
+        "placeholder": "Basic Plan"
+      }
+    },
+    {
+      "id": "slug",
+      "name": "Slug",
+      "type": "UID",
+      "config": {
+        "label": "URL Slug",
+        "placeholder": "basic-plan"
+      }
+    },
+    {
+      "id": "description",
+      "name": "Description",
+      "type": "Text",
+      "config": {
+        "label": "Plan Description",
+        "placeholder": "Perfect for small businesses"
+      }
+    },
+    {
+      "id": "price",
+      "name": "Price",
+      "type": "Number",
+      "config": {
+        "label": "Price",
+        "placeholder": "99"
+      }
+    },
+    {
+      "id": "currency",
+      "name": "Currency",
+      "type": "Select",
+      "config": {
+        "label": "Currency",
+        "options": [
+          {
+            "value": "DKK",
+            "label": "Danish Krone (DKK)"
+          },
+          {
+            "value": "EUR",
+            "label": "Euro (EUR)"
+          },
+          {
+            "value": "USD",
+            "label": "US Dollar (USD)"
+          }
+        ],
+        "default_value": "DKK"
+      }
+    },
+    {
+      "id": "billing_period",
+      "name": "Billing Period",
+      "type": "Select",
+      "config": {
+        "label": "Billing Period",
+        "options": [
+          {
+            "value": "monthly",
+            "label": "Monthly"
+          },
+          {
+            "value": "yearly",
+            "label": "Yearly"
+          },
+          {
+            "value": "one-time",
+            "label": "One-time"
+          }
+        ],
+        "default_value": "monthly"
+      }
+    },
+    {
+      "id": "original_price",
+      "name": "Original Price",
+      "type": "Number",
+      "config": {
+        "label": "Original Price (for discounts)",
+        "placeholder": "149"
+      }
+    },
+    {
+      "id": "discount_percentage",
+      "name": "Discount Percentage",
+      "type": "Number",
+      "config": {
+        "label": "Discount Percentage",
+        "placeholder": "20"
+      }
+    },
+    {
+      "id": "features",
+      "name": "Features",
+      "type": "Group",
+      "config": {
+        "label": "Plan Features",
+        "repeat": true,
+        "fields": [
+          {
+            "id": "feature_text",
+            "name": "Feature Text",
+            "type": "Text",
+            "config": {
+              "label": "Feature Description",
+              "placeholder": "Unlimited quotes"
+            }
+          },
+          {
+            "id": "feature_icon",
+            "name": "Feature Icon",
+            "type": "Text",
+            "config": {
+              "label": "Feature Icon",
+              "placeholder": "check"
+            }
+          },
+          {
+            "id": "highlighted",
+            "name": "Highlighted",
+            "type": "Boolean",
+            "config": {
+              "label": "Highlighted Feature",
+              "placeholder_false": "Normal feature",
+              "placeholder_true": "Highlighted feature"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "cta_text",
+      "name": "CTA Text",
+      "type": "Text",
+      "config": {
+        "label": "Call to Action Text",
+        "placeholder": "Get Started"
+      }
+    },
+    {
+      "id": "cta_link",
+      "name": "CTA Link",
+      "type": "Text",
+      "config": {
+        "label": "Call to Action Link",
+        "placeholder": "/signup"
+      }
+    },
+    {
+      "id": "popular",
+      "name": "Popular",
+      "type": "Boolean",
+      "config": {
+        "label": "Popular Plan",
+        "placeholder_false": "Not popular",
+        "placeholder_true": "Popular plan"
+      }
+    },
+    {
+      "id": "featured",
+      "name": "Featured",
+      "type": "Boolean",
+      "config": {
+        "label": "Featured Plan",
+        "placeholder_false": "Not featured",
+        "placeholder_true": "Featured plan"
+      }
+    },
+    {
+      "id": "order",
+      "name": "Order",
+      "type": "Number",
+      "config": {
+        "label": "Display Order",
+        "placeholder": "1"
+      }
+    },
+    {
+      "id": "status",
+      "name": "Status",
+      "type": "Select",
+      "config": {
+        "label": "Plan Status",
+        "options": [
+          {
+            "value": "active",
+            "label": "Active"
+          },
+          {
+            "value": "inactive",
+            "label": "Inactive"
+          },
+          {
+            "value": "coming-soon",
+            "label": "Coming Soon"
+          }
+        ],
+        "default_value": "active"
+      }
+    }
+  ]
+}

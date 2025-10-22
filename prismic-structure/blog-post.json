@@ -1,0 +1,252 @@
+{
+  "id": "blog_post",
+  "name": "Blog Post",
+  "description": "Blog articles and news posts",
+  "icon": "article",
+  "tabs": [
+    {
+      "key": "content",
+      "displayName": "Content"
+    },
+    {
+      "key": "seo",
+      "displayName": "SEO"
+    },
+    {
+      "key": "settings",
+      "displayName": "Settings"
+    }
+  ],
+  "fields": [
+    {
+      "id": "title",
+      "name": "Title",
+      "type": "Text",
+      "config": {
+        "label": "Blog Post Title",
+        "placeholder": "How to Write Better Quotes in 2024"
+      }
+    },
+    {
+      "id": "slug",
+      "name": "Slug",
+      "type": "UID",
+      "config": {
+        "label": "URL Slug",
+        "placeholder": "how-to-write-better-quotes-2024"
+      }
+    },
+    {
+      "id": "excerpt",
+      "name": "Excerpt",
+      "type": "Text",
+      "config": {
+        "label": "Post Excerpt",
+        "placeholder": "Brief description of the blog post"
+      }
+    },
+    {
+      "id": "featured_image",
+      "name": "Featured Image",
+      "type": "Image",
+      "config": {
+        "label": "Featured Image",
+        "constraint": {
+          "width": 1200,
+          "height": 630
+        },
+        "thumbnails": [
+          {
+            "name": "card",
+            "width": 400,
+            "height": 300
+          },
+          {
+            "name": "mobile",
+            "width": 600,
+            "height": 400
+          }
+        ]
+      }
+    },
+    {
+      "id": "author",
+      "name": "Author",
+      "type": "ContentRelationship",
+      "config": {
+        "label": "Author",
+        "select": "team_member",
+        "placeholder": "Select author"
+      }
+    },
+    {
+      "id": "publish_date",
+      "name": "Publish Date",
+      "type": "Date",
+      "config": {
+        "label": "Publish Date"
+      }
+    },
+    {
+      "id": "last_updated",
+      "name": "Last Updated",
+      "type": "Date",
+      "config": {
+        "label": "Last Updated"
+      }
+    },
+    {
+      "id": "reading_time",
+      "name": "Reading Time",
+      "type": "Number",
+      "config": {
+        "label": "Reading Time (minutes)",
+        "placeholder": "5"
+      }
+    },
+    {
+      "id": "category",
+      "name": "Category",
+      "type": "Select",
+      "config": {
+        "label": "Blog Category",
+        "options": [
+          {
+            "value": "business-tips",
+            "label": "Business Tips"
+          },
+          {
+            "value": "quote-writing",
+            "label": "Quote Writing"
+          },
+          {
+            "value": "templates",
+            "label": "Templates"
+          },
+          {
+            "value": "industry-news",
+            "label": "Industry News"
+          },
+          {
+            "value": "case-studies",
+            "label": "Case Studies"
+          },
+          {
+            "value": "product-updates",
+            "label": "Product Updates"
+          }
+        ],
+        "default_value": "business-tips"
+      }
+    },
+    {
+      "id": "tags",
+      "name": "Tags",
+      "type": "Text",
+      "config": {
+        "label": "Tags",
+        "placeholder": "quote, business, tips"
+      }
+    },
+    {
+      "id": "content",
+      "name": "Content",
+      "type": "StructuredText",
+      "config": {
+        "label": "Blog Content",
+        "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+      }
+    },
+    {
+      "id": "seo_title",
+      "name": "SEO Title",
+      "type": "Text",
+      "config": {
+        "label": "SEO Title",
+        "placeholder": "SEO optimized title for search engines"
+      }
+    },
+    {
+      "id": "seo_description",
+      "name": "SEO Description",
+      "type": "Text",
+      "config": {
+        "label": "SEO Description",
+        "placeholder": "SEO optimized description for search engines"
+      }
+    },
+    {
+      "id": "seo_image",
+      "name": "SEO Image",
+      "type": "Image",
+      "config": {
+        "label": "SEO Image",
+        "constraint": {
+          "width": 1200,
+          "height": 630
+        }
+      }
+    },
+    {
+      "id": "seo_keywords",
+      "name": "SEO Keywords",
+      "type": "Text",
+      "config": {
+        "label": "SEO Keywords",
+        "placeholder": "keyword1, keyword2, keyword3"
+      }
+    },
+    {
+      "id": "canonical_url",
+      "name": "Canonical URL",
+      "type": "Text",
+      "config": {
+        "label": "Canonical URL",
+        "placeholder": "https://tilbudsskabelon.dk/blog/post-url"
+      }
+    },
+    {
+      "id": "no_index",
+      "name": "No Index",
+      "type": "Boolean",
+      "config": {
+        "label": "No Index",
+        "placeholder_false": "Allow indexing",
+        "placeholder_true": "Prevent indexing"
+      }
+    },
+    {
+      "id": "featured",
+      "name": "Featured",
+      "type": "Boolean",
+      "config": {
+        "label": "Featured Post",
+        "placeholder_false": "Not featured",
+        "placeholder_true": "Featured post"
+      }
+    },
+    {
+      "id": "status",
+      "name": "Status",
+      "type": "Select",
+      "config": {
+        "label": "Publication Status",
+        "options": [
+          {
+            "value": "draft",
+            "label": "Draft"
+          },
+          {
+            "value": "published",
+            "label": "Published"
+          },
+          {
+            "value": "archived",
+            "label": "Archived"
+          }
+        ],
+        "default_value": "draft"
+      }
+    }
+  ]
+}

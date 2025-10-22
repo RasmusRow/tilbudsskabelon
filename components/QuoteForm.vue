@@ -384,17 +384,7 @@
 import { ref, computed } from "vue";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
-import { collection, addDoc } from "firebase/firestore";
-import {
-  ref as storageRef,
-  uploadBytes,
-  getDownloadURL,
-} from "firebase/storage";
-import { useNuxtApp } from "#app";
 import axios from "axios";
-
-// Get access to Firebase services
-const { $firestore, $storage } = useNuxtApp();
 
 const fileInput = ref(null);
 const isDragging = ref(false);
@@ -550,13 +540,11 @@ const handleFile = (file) => {
 };
 
 const uploadLogoToStorage = async () => {
+  // For now, we'll just return the logo URL if it exists
+  // In a real implementation, you might want to upload to Prismic or another service
   if (logoFile.value) {
-    const storageReference = storageRef(
-      $storage,
-      `logos/${logoFile.value.name}`
-    );
-    await uploadBytes(storageReference, logoFile.value);
-    return await getDownloadURL(storageReference);
+    // Create a local URL for the file
+    return URL.createObjectURL(logoFile.value);
   }
   return null;
 };
@@ -574,13 +562,15 @@ const generateQuote = async () => {
       logoUrl: logoDownloadUrl,
     };
 
-    await addDoc(collection($firestore, "quotes"), quote);
-    alert("Tilbud gemt succesfuldt!");
+    // For now, we'll just generate the PDF without saving to a database
+    // In a real implementation, you might want to save to Prismic or another service
+    console.log("Quote generated:", quote);
+    alert("Tilbud genereret succesfuldt!");
 
     generatePdf(quote, logoDownloadUrl);
   } catch (error) {
-    console.error("Fejl ved gemning af tilbud:", error);
-    alert("Der opstod en fejl ved gemning af tilbuddet.");
+    console.error("Fejl ved generering af tilbud:", error);
+    alert("Der opstod en fejl ved generering af tilbuddet.");
   }
 };
 

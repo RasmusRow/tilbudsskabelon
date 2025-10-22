@@ -1,0 +1,623 @@
+{
+  "id": "page",
+  "name": "Page",
+  "description": "Standard page with flexible content blocks",
+  "icon": "file",
+  "tabs": [
+    {
+      "key": "content",
+      "displayName": "Content"
+    },
+    {
+      "key": "seo",
+      "displayName": "SEO"
+    },
+    {
+      "key": "navigation",
+      "displayName": "Navigation"
+    }
+  ],
+  "fields": [
+    {
+      "id": "title",
+      "name": "Title",
+      "type": "Text",
+      "config": {
+        "label": "Page Title",
+        "placeholder": "Enter page title"
+      }
+    },
+    {
+      "id": "slug",
+      "name": "Slug",
+      "type": "UID",
+      "config": {
+        "label": "URL Slug",
+        "placeholder": "page-url-slug"
+      }
+    },
+    {
+      "id": "content",
+      "name": "Content",
+      "type": "Group",
+      "config": {
+        "label": "Page Content",
+        "fields": [
+          {
+            "id": "slices",
+            "name": "Slices",
+            "type": "SliceZone",
+            "config": {
+              "label": "Content Blocks",
+              "choices": {
+                "hero": {
+                  "type": "Slice",
+                  "fieldset": "Hero Section",
+                  "description": "Hero banner with title, subtitle and CTA",
+                  "icon": "view_carousel",
+                  "display": "list",
+                  "non-repeat": {
+                    "title": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Hero Title",
+                        "placeholder": "Main headline"
+                      }
+                    },
+                    "subtitle": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Hero Subtitle",
+                        "placeholder": "Supporting text"
+                      }
+                    },
+                    "background_image": {
+                      "type": "Image",
+                      "config": {
+                        "label": "Background Image",
+                        "constraint": {
+                          "width": 1920,
+                          "height": 1080
+                        },
+                        "thumbnails": [
+                          {
+                            "name": "mobile",
+                            "width": 768,
+                            "height": 1024
+                          }
+                        ]
+                      }
+                    },
+                    "cta_text": {
+                      "type": "Text",
+                      "config": {
+                        "label": "CTA Button Text",
+                        "placeholder": "Get Started"
+                      }
+                    },
+                    "cta_link": {
+                      "type": "Text",
+                      "config": {
+                        "label": "CTA Button Link",
+                        "placeholder": "/lav-tilbud"
+                      }
+                    },
+                    "cta_style": {
+                      "type": "Select",
+                      "config": {
+                        "label": "CTA Button Style",
+                        "options": [
+                          {
+                            "value": "primary",
+                            "label": "Primary"
+                          },
+                          {
+                            "value": "secondary",
+                            "label": "Secondary"
+                          },
+                          {
+                            "value": "outline",
+                            "label": "Outline"
+                          }
+                        ],
+                        "default_value": "primary"
+                      }
+                    }
+                  }
+                },
+                "usp": {
+                  "type": "Slice",
+                  "fieldset": "USP Section",
+                  "description": "Unique Selling Points grid",
+                  "icon": "star",
+                  "display": "list",
+                  "repeat": {
+                    "icon": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Icon (SVG path or class)",
+                        "placeholder": "M13 10V3L4 14h7v7l9-11h-7z"
+                      }
+                    },
+                    "title": {
+                      "type": "Text",
+                      "config": {
+                        "label": "USP Title",
+                        "placeholder": "Fast & Efficient"
+                      }
+                    },
+                    "description": {
+                      "type": "Text",
+                      "config": {
+                        "label": "USP Description",
+                        "placeholder": "Create quotes in minutes with our intuitive platform"
+                      }
+                    }
+                  }
+                },
+                "info": {
+                  "type": "Slice",
+                  "fieldset": "Info Section",
+                  "description": "Information section with text and image",
+                  "icon": "info",
+                  "display": "list",
+                  "non-repeat": {
+                    "title": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Section Title",
+                        "placeholder": "About Tilbudsskabelon.dk"
+                      }
+                    },
+                    "content": {
+                      "type": "StructuredText",
+                      "config": {
+                        "label": "Content",
+                        "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                      }
+                    },
+                    "image": {
+                      "type": "Image",
+                      "config": {
+                        "label": "Image",
+                        "constraint": {
+                          "width": 800,
+                          "height": 600
+                        }
+                      }
+                    },
+                    "image_position": {
+                      "type": "Select",
+                      "config": {
+                        "label": "Image Position",
+                        "options": [
+                          {
+                            "value": "left",
+                            "label": "Left"
+                          },
+                          {
+                            "value": "right",
+                            "label": "Right"
+                          },
+                          {
+                            "value": "top",
+                            "label": "Top"
+                          },
+                          {
+                            "value": "bottom",
+                            "label": "Bottom"
+                          }
+                        ],
+                        "default_value": "right"
+                      }
+                    }
+                  }
+                },
+                "rich_text": {
+                  "type": "Slice",
+                  "fieldset": "Rich Text",
+                  "description": "Rich text content with formatting",
+                  "icon": "format_align_left",
+                  "display": "list",
+                  "non-repeat": {
+                    "content": {
+                      "type": "StructuredText",
+                      "config": {
+                        "label": "Content",
+                        "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                      }
+                    }
+                  }
+                },
+                "cta": {
+                  "type": "Slice",
+                  "fieldset": "Call to Action",
+                  "description": "Call to action section",
+                  "icon": "call_to_action",
+                  "display": "list",
+                  "non-repeat": {
+                    "title": {
+                      "type": "Text",
+                      "config": {
+                        "label": "CTA Title",
+                        "placeholder": "Ready to get started?"
+                      }
+                    },
+                    "subtitle": {
+                      "type": "Text",
+                      "config": {
+                        "label": "CTA Subtitle",
+                        "placeholder": "Start creating professional quotes today"
+                      }
+                    },
+                    "button_text": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Button Text",
+                        "placeholder": "Create Quote"
+                      }
+                    },
+                    "button_link": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Button Link",
+                        "placeholder": "/lav-tilbud"
+                      }
+                    },
+                    "background_color": {
+                      "type": "Color",
+                      "config": {
+                        "label": "Background Color"
+                      }
+                    },
+                    "text_color": {
+                      "type": "Color",
+                      "config": {
+                        "label": "Text Color"
+                      }
+                    }
+                  }
+                },
+                "image": {
+                  "type": "Slice",
+                  "fieldset": "Image",
+                  "description": "Single image with caption",
+                  "icon": "image",
+                  "display": "list",
+                  "non-repeat": {
+                    "image": {
+                      "type": "Image",
+                      "config": {
+                        "label": "Image",
+                        "constraint": {
+                          "width": 1200,
+                          "height": 800
+                        }
+                      }
+                    },
+                    "caption": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Caption",
+                        "placeholder": "Image caption"
+                      }
+                    },
+                    "alignment": {
+                      "type": "Select",
+                      "config": {
+                        "label": "Alignment",
+                        "options": [
+                          {
+                            "value": "left",
+                            "label": "Left"
+                          },
+                          {
+                            "value": "center",
+                            "label": "Center"
+                          },
+                          {
+                            "value": "right",
+                            "label": "Right"
+                          }
+                        ],
+                        "default_value": "center"
+                      }
+                    }
+                  }
+                },
+                "gallery": {
+                  "type": "Slice",
+                  "fieldset": "Image Gallery",
+                  "description": "Multiple images in a gallery",
+                  "icon": "view_module",
+                  "display": "list",
+                  "repeat": {
+                    "image": {
+                      "type": "Image",
+                      "config": {
+                        "label": "Gallery Image",
+                        "constraint": {
+                          "width": 800,
+                          "height": 600
+                        }
+                      }
+                    },
+                    "caption": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Caption",
+                        "placeholder": "Image caption"
+                      }
+                    }
+                  }
+                },
+                "quote_form": {
+                  "type": "Slice",
+                  "fieldset": "Quote Form",
+                  "description": "Quote generation form",
+                  "icon": "assignment",
+                  "display": "list",
+                  "non-repeat": {
+                    "title": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Form Title",
+                        "placeholder": "Create Your Quote"
+                      }
+                    },
+                    "subtitle": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Form Subtitle",
+                        "placeholder": "Fill out the form below to generate your professional quote"
+                      }
+                    },
+                    "success_message": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Success Message",
+                        "placeholder": "Quote generated successfully!"
+                      }
+                    }
+                  }
+                },
+                "guide_listing": {
+                  "type": "Slice",
+                  "fieldset": "Guide Listing",
+                  "description": "List of guides/tips",
+                  "icon": "list",
+                  "display": "list",
+                  "non-repeat": {
+                    "title": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Section Title",
+                        "placeholder": "Tips & Good Advice"
+                      }
+                    },
+                    "subtitle": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Section Subtitle",
+                        "placeholder": "Learn how to create better quotes"
+                      }
+                    }
+                  },
+                  "repeat": {
+                    "guide": {
+                      "type": "ContentRelationship",
+                      "config": {
+                        "label": "Guide",
+                        "select": "guide",
+                        "placeholder": "Select a guide"
+                      }
+                    }
+                  }
+                },
+                "faq": {
+                  "type": "Slice",
+                  "fieldset": "FAQ Section",
+                  "description": "Frequently Asked Questions",
+                  "icon": "help",
+                  "display": "list",
+                  "non-repeat": {
+                    "title": {
+                      "type": "Text",
+                      "config": {
+                        "label": "FAQ Title",
+                        "placeholder": "Frequently Asked Questions"
+                      }
+                    }
+                  },
+                  "repeat": {
+                    "question": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Question",
+                        "placeholder": "How do I create a quote?"
+                      }
+                    },
+                    "answer": {
+                      "type": "StructuredText",
+                      "config": {
+                        "label": "Answer",
+                        "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                      }
+                    }
+                  }
+                },
+                "testimonial": {
+                  "type": "Slice",
+                  "fieldset": "Testimonial",
+                  "description": "Customer testimonial",
+                  "icon": "format_quote",
+                  "display": "list",
+                  "non-repeat": {
+                    "quote": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Testimonial Quote",
+                        "placeholder": "This platform saved me hours every week!"
+                      }
+                    },
+                    "author_name": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Author Name",
+                        "placeholder": "John Doe"
+                      }
+                    },
+                    "author_title": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Author Title",
+                        "placeholder": "CEO, Company Name"
+                      }
+                    },
+                    "author_image": {
+                      "type": "Image",
+                      "config": {
+                        "label": "Author Image",
+                        "constraint": {
+                          "width": 150,
+                          "height": 150
+                        }
+                      }
+                    },
+                    "company_logo": {
+                      "type": "Image",
+                      "config": {
+                        "label": "Company Logo",
+                        "constraint": {
+                          "width": 200,
+                          "height": 100
+                        }
+                      }
+                    }
+                  }
+                },
+                "contact_form": {
+                  "type": "Slice",
+                  "fieldset": "Contact Form",
+                  "description": "Contact form",
+                  "icon": "contact_mail",
+                  "display": "list",
+                  "non-repeat": {
+                    "title": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Form Title",
+                        "placeholder": "Contact Us"
+                      }
+                    },
+                    "subtitle": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Form Subtitle",
+                        "placeholder": "Get in touch with our team"
+                      }
+                    },
+                    "success_message": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Success Message",
+                        "placeholder": "Thank you for your message!"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "seo_title",
+      "name": "SEO Title",
+      "type": "Text",
+      "config": {
+        "label": "SEO Title",
+        "placeholder": "Page title for search engines"
+      }
+    },
+    {
+      "id": "seo_description",
+      "name": "SEO Description",
+      "type": "Text",
+      "config": {
+        "label": "SEO Description",
+        "placeholder": "Page description for search engines"
+      }
+    },
+    {
+      "id": "seo_image",
+      "name": "SEO Image",
+      "type": "Image",
+      "config": {
+        "label": "SEO Image",
+        "constraint": {
+          "width": 1200,
+          "height": 630
+        }
+      }
+    },
+    {
+      "id": "seo_keywords",
+      "name": "SEO Keywords",
+      "type": "Text",
+      "config": {
+        "label": "SEO Keywords",
+        "placeholder": "keyword1, keyword2, keyword3"
+      }
+    },
+    {
+      "id": "canonical_url",
+      "name": "Canonical URL",
+      "type": "Text",
+      "config": {
+        "label": "Canonical URL",
+        "placeholder": "https://tilbudsskabelon.dk/page-url"
+      }
+    },
+    {
+      "id": "no_index",
+      "name": "No Index",
+      "type": "Boolean",
+      "config": {
+        "label": "No Index",
+        "placeholder_false": "Allow indexing",
+        "placeholder_true": "Prevent indexing"
+      }
+    },
+    {
+      "id": "show_in_navigation",
+      "name": "Show in Navigation",
+      "type": "Boolean",
+      "config": {
+        "label": "Show in Navigation",
+        "placeholder_false": "Hide from navigation",
+        "placeholder_true": "Show in navigation"
+      }
+    },
+    {
+      "id": "navigation_label",
+      "name": "Navigation Label",
+      "type": "Text",
+      "config": {
+        "label": "Navigation Label",
+        "placeholder": "Label for navigation menu"
+      }
+    },
+    {
+      "id": "parent_page",
+      "name": "Parent Page",
+      "type": "ContentRelationship",
+      "config": {
+        "label": "Parent Page",
+        "select": "page",
+        "placeholder": "Select parent page for hierarchy"
+      }
+    }
+  ]
+}

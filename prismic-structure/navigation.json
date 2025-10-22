@@ -1,0 +1,419 @@
+{
+  "id": "navigation",
+  "name": "Navigation",
+  "description": "Site navigation configuration",
+  "icon": "navigation",
+  "tabs": [
+    {
+      "key": "content",
+      "displayName": "Content"
+    },
+    {
+      "key": "settings",
+      "displayName": "Settings"
+    }
+  ],
+  "fields": [
+    {
+      "id": "main_navigation",
+      "name": "Main Navigation",
+      "type": "Group",
+      "config": {
+        "label": "Main Navigation",
+        "fields": [
+          {
+            "id": "logo",
+            "name": "Logo",
+            "type": "Image",
+            "config": {
+              "label": "Navigation Logo",
+              "constraint": {
+                "width": 200,
+                "height": 100
+              },
+              "thumbnails": [
+                {
+                  "name": "mobile",
+                  "width": 100,
+                  "height": 50
+                }
+              ]
+            }
+          },
+          {
+            "id": "logo_link",
+            "name": "Logo Link",
+            "type": "Text",
+            "config": {
+              "label": "Logo Link",
+              "placeholder": "/"
+            }
+          },
+          {
+            "id": "menu_items",
+            "name": "Menu Items",
+            "type": "Group",
+            "config": {
+              "label": "Menu Items",
+              "repeat": true,
+              "fields": [
+                {
+                  "id": "label",
+                  "name": "Label",
+                  "type": "Text",
+                  "config": {
+                    "label": "Menu Label",
+                    "placeholder": "Home"
+                  }
+                },
+                {
+                  "id": "link",
+                  "name": "Link",
+                  "type": "Text",
+                  "config": {
+                    "label": "Link URL",
+                    "placeholder": "/"
+                  }
+                },
+                {
+                  "id": "external",
+                  "name": "External Link",
+                  "type": "Boolean",
+                  "config": {
+                    "label": "External Link",
+                    "placeholder_false": "Internal link",
+                    "placeholder_true": "External link"
+                  }
+                },
+                {
+                  "id": "open_in_new_tab",
+                  "name": "Open in New Tab",
+                  "type": "Boolean",
+                  "config": {
+                    "label": "Open in New Tab",
+                    "placeholder_false": "Same tab",
+                    "placeholder_true": "New tab"
+                  }
+                },
+                {
+                  "id": "submenu",
+                  "name": "Submenu",
+                  "type": "Group",
+                  "config": {
+                    "label": "Submenu Items",
+                    "repeat": true,
+                    "fields": [
+                      {
+                        "id": "submenu_label",
+                        "name": "Submenu Label",
+                        "type": "Text",
+                        "config": {
+                          "label": "Submenu Label",
+                          "placeholder": "Submenu Item"
+                        }
+                      },
+                      {
+                        "id": "submenu_link",
+                        "name": "Submenu Link",
+                        "type": "Text",
+                        "config": {
+                          "label": "Submenu Link",
+                          "placeholder": "/submenu-item"
+                        }
+                      },
+                      {
+                        "id": "submenu_external",
+                        "name": "Submenu External",
+                        "type": "Boolean",
+                        "config": {
+                          "label": "External Link",
+                          "placeholder_false": "Internal link",
+                          "placeholder_true": "External link"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "cta_button",
+            "name": "CTA Button",
+            "type": "Group",
+            "config": {
+              "label": "Call to Action Button",
+              "fields": [
+                {
+                  "id": "cta_text",
+                  "name": "CTA Text",
+                  "type": "Text",
+                  "config": {
+                    "label": "Button Text",
+                    "placeholder": "Get Started"
+                  }
+                },
+                {
+                  "id": "cta_link",
+                  "name": "CTA Link",
+                  "type": "Text",
+                  "config": {
+                    "label": "Button Link",
+                    "placeholder": "/lav-tilbud"
+                  }
+                },
+                {
+                  "id": "cta_style",
+                  "name": "CTA Style",
+                  "type": "Select",
+                  "config": {
+                    "label": "Button Style",
+                    "options": [
+                      {
+                        "value": "primary",
+                        "label": "Primary"
+                      },
+                      {
+                        "value": "secondary",
+                        "label": "Secondary"
+                      },
+                      {
+                        "value": "outline",
+                        "label": "Outline"
+                      }
+                    ],
+                    "default_value": "primary"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "footer_navigation",
+      "name": "Footer Navigation",
+      "type": "Group",
+      "config": {
+        "label": "Footer Navigation",
+        "fields": [
+          {
+            "id": "footer_logo",
+            "name": "Footer Logo",
+            "type": "Image",
+            "config": {
+              "label": "Footer Logo",
+              "constraint": {
+                "width": 200,
+                "height": 100
+              }
+            }
+          },
+          {
+            "id": "footer_description",
+            "name": "Footer Description",
+            "type": "StructuredText",
+            "config": {
+              "label": "Footer Description",
+              "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            }
+          },
+          {
+            "id": "footer_columns",
+            "name": "Footer Columns",
+            "type": "Group",
+            "config": {
+              "label": "Footer Columns",
+              "repeat": true,
+              "fields": [
+                {
+                  "id": "column_title",
+                  "name": "Column Title",
+                  "type": "Text",
+                  "config": {
+                    "label": "Column Title",
+                    "placeholder": "Quick Links"
+                  }
+                },
+                {
+                  "id": "column_links",
+                  "name": "Column Links",
+                  "type": "Group",
+                  "config": {
+                    "label": "Column Links",
+                    "repeat": true,
+                    "fields": [
+                      {
+                        "id": "link_text",
+                        "name": "Link Text",
+                        "type": "Text",
+                        "config": {
+                          "label": "Link Text",
+                          "placeholder": "Link Text"
+                        }
+                      },
+                      {
+                        "id": "link_url",
+                        "name": "Link URL",
+                        "type": "Text",
+                        "config": {
+                          "label": "Link URL",
+                          "placeholder": "/link-url"
+                        }
+                      },
+                      {
+                        "id": "external_link",
+                        "name": "External Link",
+                        "type": "Boolean",
+                        "config": {
+                          "label": "External Link",
+                          "placeholder_false": "Internal link",
+                          "placeholder_true": "External link"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "contact_info",
+            "name": "Contact Information",
+            "type": "Group",
+            "config": {
+              "label": "Contact Information",
+              "fields": [
+                {
+                  "id": "contact_title",
+                  "name": "Contact Title",
+                  "type": "Text",
+                  "config": {
+                    "label": "Contact Section Title",
+                    "placeholder": "Contact Us"
+                  }
+                },
+                {
+                  "id": "email",
+                  "name": "Email",
+                  "type": "Text",
+                  "config": {
+                    "label": "Email Address",
+                    "placeholder": "support@tilbudsskabelon.dk"
+                  }
+                },
+                {
+                  "id": "phone",
+                  "name": "Phone",
+                  "type": "Text",
+                  "config": {
+                    "label": "Phone Number",
+                    "placeholder": "+45 12345678"
+                  }
+                },
+                {
+                  "id": "address",
+                  "name": "Address",
+                  "type": "Text",
+                  "config": {
+                    "label": "Address",
+                    "placeholder": "Company Street 123, 2100 Copenhagen"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "social_links",
+            "name": "Social Links",
+            "type": "Group",
+            "config": {
+              "label": "Social Media Links",
+              "repeat": true,
+              "fields": [
+                {
+                  "id": "platform",
+                  "name": "Platform",
+                  "type": "Select",
+                  "config": {
+                    "label": "Social Platform",
+                    "options": [
+                      {
+                        "value": "facebook",
+                        "label": "Facebook"
+                      },
+                      {
+                        "value": "twitter",
+                        "label": "Twitter"
+                      },
+                      {
+                        "value": "linkedin",
+                        "label": "LinkedIn"
+                      },
+                      {
+                        "value": "instagram",
+                        "label": "Instagram"
+                      },
+                      {
+                        "value": "youtube",
+                        "label": "YouTube"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "url",
+                  "name": "URL",
+                  "type": "Text",
+                  "config": {
+                    "label": "Profile URL",
+                    "placeholder": "https://facebook.com/yourpage"
+                  }
+                },
+                {
+                  "id": "icon",
+                  "name": "Icon",
+                  "type": "Text",
+                  "config": {
+                    "label": "Icon Class or SVG",
+                    "placeholder": "fab fa-facebook"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "copyright_text",
+            "name": "Copyright Text",
+            "type": "Text",
+            "config": {
+              "label": "Copyright Text",
+              "placeholder": "© 2024 Tilbudsskabelon.dk. All rights reserved."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "mobile_menu",
+      "name": "Mobile Menu",
+      "type": "Boolean",
+      "config": {
+        "label": "Enable Mobile Menu",
+        "placeholder_false": "Disabled",
+        "placeholder_true": "Enabled"
+      }
+    },
+    {
+      "id": "sticky_navigation",
+      "name": "Sticky Navigation",
+      "type": "Boolean",
+      "config": {
+        "label": "Sticky Navigation",
+        "placeholder_false": "Not sticky",
+        "placeholder_true": "Sticky navigation"
+      }
+    }
+  ]
+}

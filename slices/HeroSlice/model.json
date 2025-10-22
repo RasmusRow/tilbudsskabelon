@@ -1,0 +1,46 @@
+{
+  "id": "hero",
+  "type": "SharedSlice",
+  "name": "Hero",
+  "description": "Hero banner with title, subtitle and CTA",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Hero Title",
+            "placeholder": "Main headline"
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Hero Subtitle",
+            "placeholder": "Supporting text"
+          }
+        },
+        "cta_text": {
+          "type": "Text",
+          "config": {
+            "label": "CTA Button Text",
+            "placeholder": "Get Started"
+          }
+        },
+        "cta_link": {
+          "type": "Text",
+          "config": {
+            "label": "CTA Button Link",
+            "placeholder": "/lav-tilbud"
+          }
+        }
+      }
+    }
+  ]
+}

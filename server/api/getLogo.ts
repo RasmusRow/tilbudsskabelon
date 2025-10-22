@@ -1,32 +1,35 @@
-import admin from "firebase-admin";
+import { createClient } from '@prismicio/client'
 
 export default defineEventHandler(async (event) => {
   const query = getQuery(event);
-  const logoPath = query.path;
+  const logoId = query.id;
 
-  if (!logoPath) {
-    console.error("Error: Logo path not provided");
+  if (!logoId) {
+    console.error("Error: Logo ID not provided");
     throw createError({
       statusCode: 400,
-      statusMessage: "Logo path is required",
+      statusMessage: "Logo ID is required",
     });
   }
 
   try {
-    // Access the Firebase Admin storage bucket
-    const bucket = admin.storage().bucket();
-    const file = bucket.file(logoPath);
+    const client = createClient('tilbudsskabelon')
+    
+    // Get the logo from Prismic
+    const logo = await client.getByID(logoId)
+    
+    if (!logo.data.logo) {
+      throw createError({
+        statusCode: 404,
+        statusMessage: "Logo not found",
+      });
+    }
 
-    // Get metadata to determine content type
-    const [metadata] = await file.getMetadata();
-    console.log("File metadata:", metadata);
-
-    // Create a readable stream of the file
-    const stream = file.createReadStream();
-
-    // Set the appropriate content type
-    event.node.res.setHeader("Content-Type", metadata.contentType);
-    return stream;
+    // Return the logo URL
+    return {
+      url: logo.data.logo.url,
+      alt: logo.data.logo.alt || 'Logo'
+    }
   } catch (error) {
     console.error("Error fetching logo:", error);
     throw createError({

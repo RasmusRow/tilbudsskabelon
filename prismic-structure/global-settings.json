@@ -1,0 +1,260 @@
+{
+  "id": "global_settings",
+  "name": "Global Settings",
+  "description": "Site-wide settings and configuration",
+  "icon": "settings",
+  "tabs": [
+    {
+      "key": "content",
+      "displayName": "Content"
+    },
+    {
+      "key": "seo",
+      "displayName": "SEO"
+    },
+    {
+      "key": "social",
+      "displayName": "Social Media"
+    },
+    {
+      "key": "analytics",
+      "displayName": "Analytics"
+    },
+    {
+      "key": "legal",
+      "displayName": "Legal"
+    }
+  ],
+  "fields": [
+    {
+      "id": "site_title",
+      "name": "Site Title",
+      "type": "Text",
+      "config": {
+        "label": "Site Title",
+        "placeholder": "Tilbudsskabelon.dk"
+      }
+    },
+    {
+      "id": "site_description",
+      "name": "Site Description",
+      "type": "Text",
+      "config": {
+        "label": "Site Description",
+        "placeholder": "Professional quote templates for Danish businesses"
+      }
+    },
+    {
+      "id": "logo",
+      "name": "Logo",
+      "type": "Image",
+      "config": {
+        "label": "Site Logo",
+        "constraint": {
+          "width": 200,
+          "height": 100
+        },
+        "thumbnails": [
+          {
+            "name": "mobile",
+            "width": 100,
+            "height": 50
+          }
+        ]
+      }
+    },
+    {
+      "id": "favicon",
+      "name": "Favicon",
+      "type": "Image",
+      "config": {
+        "label": "Favicon",
+        "constraint": {
+          "width": 32,
+          "height": 32
+        }
+      }
+    },
+    {
+      "id": "primary_color",
+      "name": "Primary Color",
+      "type": "Color",
+      "config": {
+        "label": "Primary Brand Color"
+      }
+    },
+    {
+      "id": "secondary_color",
+      "name": "Secondary Color",
+      "type": "Color",
+      "config": {
+        "label": "Secondary Brand Color"
+      }
+    },
+    {
+      "id": "contact_email",
+      "name": "Contact Email",
+      "type": "Text",
+      "config": {
+        "label": "Contact Email",
+        "placeholder": "support@tilbudsskabelon.dk"
+      }
+    },
+    {
+      "id": "contact_phone",
+      "name": "Contact Phone",
+      "type": "Text",
+      "config": {
+        "label": "Contact Phone",
+        "placeholder": "+45 12345678"
+      }
+    },
+    {
+      "id": "company_address",
+      "name": "Company Address",
+      "type": "Text",
+      "config": {
+        "label": "Company Address",
+        "placeholder": "Company Street 123, 2100 Copenhagen"
+      }
+    },
+    {
+      "id": "cvr_number",
+      "name": "CVR Number",
+      "type": "Text",
+      "config": {
+        "label": "CVR Number",
+        "placeholder": "12345678"
+      }
+    },
+    {
+      "id": "default_seo_title",
+      "name": "Default SEO Title",
+      "type": "Text",
+      "config": {
+        "label": "Default SEO Title",
+        "placeholder": "Tilbudsskabelon.dk - Professional Quote Templates"
+      }
+    },
+    {
+      "id": "default_seo_description",
+      "name": "Default SEO Description",
+      "type": "Text",
+      "config": {
+        "label": "Default SEO Description",
+        "placeholder": "Create professional quotes quickly and easily with our Danish quote template platform."
+      }
+    },
+    {
+      "id": "default_seo_image",
+      "name": "Default SEO Image",
+      "type": "Image",
+      "config": {
+        "label": "Default SEO Image",
+        "constraint": {
+          "width": 1200,
+          "height": 630
+        }
+      }
+    },
+    {
+      "id": "google_analytics_id",
+      "name": "Google Analytics ID",
+      "type": "Text",
+      "config": {
+        "label": "Google Analytics ID",
+        "placeholder": "G-KYEV6WW3GJ"
+      }
+    },
+    {
+      "id": "google_tag_manager_id",
+      "name": "Google Tag Manager ID",
+      "type": "Text",
+      "config": {
+        "label": "Google Tag Manager ID",
+        "placeholder": "GTM-XXXXXXX"
+      }
+    },
+    {
+      "id": "facebook_pixel_id",
+      "name": "Facebook Pixel ID",
+      "type": "Text",
+      "config": {
+        "label": "Facebook Pixel ID",
+        "placeholder": "123456789012345"
+      }
+    },
+    {
+      "id": "facebook_url",
+      "name": "Facebook URL",
+      "type": "Text",
+      "config": {
+        "label": "Facebook Page URL",
+        "placeholder": "https://facebook.com/tilbudsskabelon"
+      }
+    },
+    {
+      "id": "linkedin_url",
+      "name": "LinkedIn URL",
+      "type": "Text",
+      "config": {
+        "label": "LinkedIn Page URL",
+        "placeholder": "https://linkedin.com/company/tilbudsskabelon"
+      }
+    },
+    {
+      "id": "twitter_url",
+      "name": "Twitter URL",
+      "type": "Text",
+      "config": {
+        "label": "Twitter Profile URL",
+        "placeholder": "https://twitter.com/tilbudsskabelon"
+      }
+    },
+    {
+      "id": "instagram_url",
+      "name": "Instagram URL",
+      "type": "Text",
+      "config": {
+        "label": "Instagram Profile URL",
+        "placeholder": "https://instagram.com/tilbudsskabelon"
+      }
+    },
+    {
+      "id": "privacy_policy",
+      "name": "Privacy Policy",
+      "type": "StructuredText",
+      "config": {
+        "label": "Privacy Policy",
+        "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+      }
+    },
+    {
+      "id": "terms_of_service",
+      "name": "Terms of Service",
+      "type": "StructuredText",
+      "config": {
+        "label": "Terms of Service",
+        "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+      }
+    },
+    {
+      "id": "cookie_policy",
+      "name": "Cookie Policy",
+      "type": "StructuredText",
+      "config": {
+        "label": "Cookie Policy",
+        "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+      }
+    },
+    {
+      "id": "copyright_text",
+      "name": "Copyright Text",
+      "type": "Text",
+      "config": {
+        "label": "Copyright Text",
+        "placeholder": "© 2024 Tilbudsskabelon.dk. All rights reserved."
+      }
+    }
+  ]
+}

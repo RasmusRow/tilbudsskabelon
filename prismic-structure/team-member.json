@@ -1,0 +1,235 @@
+{
+  "id": "team_member",
+  "name": "Team Member",
+  "description": "Team member profiles",
+  "icon": "person",
+  "tabs": [
+    {
+      "key": "content",
+      "displayName": "Content"
+    },
+    {
+      "key": "social",
+      "displayName": "Social Media"
+    },
+    {
+      "key": "settings",
+      "displayName": "Settings"
+    }
+  ],
+  "fields": [
+    {
+      "id": "name",
+      "name": "Name",
+      "type": "Text",
+      "config": {
+        "label": "Full Name",
+        "placeholder": "John Doe"
+      }
+    },
+    {
+      "id": "slug",
+      "name": "Slug",
+      "type": "UID",
+      "config": {
+        "label": "URL Slug",
+        "placeholder": "john-doe"
+      }
+    },
+    {
+      "id": "title",
+      "name": "Title",
+      "type": "Text",
+      "config": {
+        "label": "Job Title",
+        "placeholder": "CEO & Founder"
+      }
+    },
+    {
+      "id": "bio",
+      "name": "Bio",
+      "type": "StructuredText",
+      "config": {
+        "label": "Biography",
+        "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+      }
+    },
+    {
+      "id": "photo",
+      "name": "Photo",
+      "type": "Image",
+      "config": {
+        "label": "Profile Photo",
+        "constraint": {
+          "width": 400,
+          "height": 400
+        },
+        "thumbnails": [
+          {
+            "name": "thumbnail",
+            "width": 200,
+            "height": 200
+          },
+          {
+            "name": "card",
+            "width": 300,
+            "height": 300
+          }
+        ]
+      }
+    },
+    {
+      "id": "email",
+      "name": "Email",
+      "type": "Text",
+      "config": {
+        "label": "Email Address",
+        "placeholder": "john@tilbudsskabelon.dk"
+      }
+    },
+    {
+      "id": "phone",
+      "name": "Phone",
+      "type": "Text",
+      "config": {
+        "label": "Phone Number",
+        "placeholder": "+45 12345678"
+      }
+    },
+    {
+      "id": "department",
+      "name": "Department",
+      "type": "Select",
+      "config": {
+        "label": "Department",
+        "options": [
+          {
+            "value": "leadership",
+            "label": "Leadership"
+          },
+          {
+            "value": "development",
+            "label": "Development"
+          },
+          {
+            "value": "design",
+            "label": "Design"
+          },
+          {
+            "value": "marketing",
+            "label": "Marketing"
+          },
+          {
+            "value": "sales",
+            "label": "Sales"
+          },
+          {
+            "value": "support",
+            "label": "Support"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          }
+        ],
+        "default_value": "other"
+      }
+    },
+    {
+      "id": "skills",
+      "name": "Skills",
+      "type": "Text",
+      "config": {
+        "label": "Skills",
+        "placeholder": "JavaScript, Vue.js, Project Management"
+      }
+    },
+    {
+      "id": "experience_years",
+      "name": "Experience Years",
+      "type": "Number",
+      "config": {
+        "label": "Years of Experience",
+        "placeholder": "5"
+      }
+    },
+    {
+      "id": "linkedin_url",
+      "name": "LinkedIn URL",
+      "type": "Text",
+      "config": {
+        "label": "LinkedIn Profile",
+        "placeholder": "https://linkedin.com/in/johndoe"
+      }
+    },
+    {
+      "id": "twitter_url",
+      "name": "Twitter URL",
+      "type": "Text",
+      "config": {
+        "label": "Twitter Profile",
+        "placeholder": "https://twitter.com/johndoe"
+      }
+    },
+    {
+      "id": "github_url",
+      "name": "GitHub URL",
+      "type": "Text",
+      "config": {
+        "label": "GitHub Profile",
+        "placeholder": "https://github.com/johndoe"
+      }
+    },
+    {
+      "id": "website_url",
+      "name": "Website URL",
+      "type": "Text",
+      "config": {
+        "label": "Personal Website",
+        "placeholder": "https://johndoe.com"
+      }
+    },
+    {
+      "id": "featured",
+      "name": "Featured",
+      "type": "Boolean",
+      "config": {
+        "label": "Featured Team Member",
+        "placeholder_false": "Not featured",
+        "placeholder_true": "Featured team member"
+      }
+    },
+    {
+      "id": "order",
+      "name": "Order",
+      "type": "Number",
+      "config": {
+        "label": "Display Order",
+        "placeholder": "1"
+      }
+    },
+    {
+      "id": "status",
+      "name": "Status",
+      "type": "Select",
+      "config": {
+        "label": "Status",
+        "options": [
+          {
+            "value": "active",
+            "label": "Active"
+          },
+          {
+            "value": "inactive",
+            "label": "Inactive"
+          },
+          {
+            "value": "former",
+            "label": "Former Employee"
+          }
+        ],
+        "default_value": "active"
+      }
+    }
+  ]
+}

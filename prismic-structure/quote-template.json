@@ -1,0 +1,561 @@
+{
+  "id": "quote_template",
+  "name": "Quote Template",
+  "description": "Predefined quote templates for different industries",
+  "icon": "description",
+  "tabs": [
+    {
+      "key": "content",
+      "displayName": "Content"
+    },
+    {
+      "key": "fields",
+      "displayName": "Form Fields"
+    },
+    {
+      "key": "seo",
+      "displayName": "SEO"
+    }
+  ],
+  "fields": [
+    {
+      "id": "title",
+      "name": "Title",
+      "type": "Text",
+      "config": {
+        "label": "Template Title",
+        "placeholder": "Handyman Quote Template"
+      }
+    },
+    {
+      "id": "slug",
+      "name": "Slug",
+      "type": "UID",
+      "config": {
+        "label": "URL Slug",
+        "placeholder": "handyman-quote-template"
+      }
+    },
+    {
+      "id": "description",
+      "name": "Description",
+      "type": "Text",
+      "config": {
+        "label": "Template Description",
+        "placeholder": "Professional quote template for handyman services"
+      }
+    },
+    {
+      "id": "industry",
+      "name": "Industry",
+      "type": "Select",
+      "config": {
+        "label": "Industry",
+        "options": [
+          {
+            "value": "handyman",
+            "label": "Handyman"
+          },
+          {
+            "value": "construction",
+            "label": "Construction"
+          },
+          {
+            "value": "consulting",
+            "label": "Consulting"
+          },
+          {
+            "value": "design",
+            "label": "Design"
+          },
+          {
+            "value": "marketing",
+            "label": "Marketing"
+          },
+          {
+            "value": "it",
+            "label": "IT Services"
+          },
+          {
+            "value": "cleaning",
+            "label": "Cleaning"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          }
+        ],
+        "default_value": "handyman"
+      }
+    },
+    {
+      "id": "featured_image",
+      "name": "Featured Image",
+      "type": "Image",
+      "config": {
+        "label": "Template Preview Image",
+        "constraint": {
+          "width": 800,
+          "height": 600
+        }
+      }
+    },
+    {
+      "id": "template_fields",
+      "name": "Template Fields",
+      "type": "Group",
+      "config": {
+        "label": "Form Fields Configuration",
+        "fields": [
+          {
+            "id": "company_fields",
+            "name": "Company Fields",
+            "type": "Group",
+            "config": {
+              "label": "Company Information Fields",
+              "repeat": true,
+              "fields": [
+                {
+                  "id": "field_name",
+                  "name": "Field Name",
+                  "type": "Text",
+                  "config": {
+                    "label": "Field Name",
+                    "placeholder": "Company Name"
+                  }
+                },
+                {
+                  "id": "field_type",
+                  "name": "Field Type",
+                  "type": "Select",
+                  "config": {
+                    "label": "Field Type",
+                    "options": [
+                      {
+                        "value": "text",
+                        "label": "Text"
+                      },
+                      {
+                        "value": "email",
+                        "label": "Email"
+                      },
+                      {
+                        "value": "tel",
+                        "label": "Phone"
+                      },
+                      {
+                        "value": "number",
+                        "label": "Number"
+                      },
+                      {
+                        "value": "textarea",
+                        "label": "Textarea"
+                      },
+                      {
+                        "value": "select",
+                        "label": "Select"
+                      }
+                    ],
+                    "default_value": "text"
+                  }
+                },
+                {
+                  "id": "required",
+                  "name": "Required",
+                  "type": "Boolean",
+                  "config": {
+                    "label": "Required Field",
+                    "placeholder_false": "Optional",
+                    "placeholder_true": "Required"
+                  }
+                },
+                {
+                  "id": "placeholder",
+                  "name": "Placeholder",
+                  "type": "Text",
+                  "config": {
+                    "label": "Placeholder Text",
+                    "placeholder": "Enter company name"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "customer_fields",
+            "name": "Customer Fields",
+            "type": "Group",
+            "config": {
+              "label": "Customer Information Fields",
+              "repeat": true,
+              "fields": [
+                {
+                  "id": "field_name",
+                  "name": "Field Name",
+                  "type": "Text",
+                  "config": {
+                    "label": "Field Name",
+                    "placeholder": "Customer Name"
+                  }
+                },
+                {
+                  "id": "field_type",
+                  "name": "Field Type",
+                  "type": "Select",
+                  "config": {
+                    "label": "Field Type",
+                    "options": [
+                      {
+                        "value": "text",
+                        "label": "Text"
+                      },
+                      {
+                        "value": "email",
+                        "label": "Email"
+                      },
+                      {
+                        "value": "tel",
+                        "label": "Phone"
+                      },
+                      {
+                        "value": "number",
+                        "label": "Number"
+                      },
+                      {
+                        "value": "textarea",
+                        "label": "Textarea"
+                      },
+                      {
+                        "value": "select",
+                        "label": "Select"
+                      }
+                    ],
+                    "default_value": "text"
+                  }
+                },
+                {
+                  "id": "required",
+                  "name": "Required",
+                  "type": "Boolean",
+                  "config": {
+                    "label": "Required Field",
+                    "placeholder_false": "Optional",
+                    "placeholder_true": "Required"
+                  }
+                },
+                {
+                  "id": "placeholder",
+                  "name": "Placeholder",
+                  "type": "Text",
+                  "config": {
+                    "label": "Placeholder Text",
+                    "placeholder": "Enter customer name"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "project_fields",
+            "name": "Project Fields",
+            "type": "Group",
+            "config": {
+              "label": "Project Information Fields",
+              "repeat": true,
+              "fields": [
+                {
+                  "id": "field_name",
+                  "name": "Field Name",
+                  "type": "Text",
+                  "config": {
+                    "label": "Field Name",
+                    "placeholder": "Project Description"
+                  }
+                },
+                {
+                  "id": "field_type",
+                  "name": "Field Type",
+                  "type": "Select",
+                  "config": {
+                    "label": "Field Type",
+                    "options": [
+                      {
+                        "value": "text",
+                        "label": "Text"
+                      },
+                      {
+                        "value": "email",
+                        "label": "Email"
+                      },
+                      {
+                        "value": "tel",
+                        "label": "Phone"
+                      },
+                      {
+                        "value": "number",
+                        "label": "Number"
+                      },
+                      {
+                        "value": "textarea",
+                        "label": "Textarea"
+                      },
+                      {
+                        "value": "select",
+                        "label": "Select"
+                      },
+                      {
+                        "value": "date",
+                        "label": "Date"
+                      }
+                    ],
+                    "default_value": "text"
+                  }
+                },
+                {
+                  "id": "required",
+                  "name": "Required",
+                  "type": "Boolean",
+                  "config": {
+                    "label": "Required Field",
+                    "placeholder_false": "Optional",
+                    "placeholder_true": "Required"
+                  }
+                },
+                {
+                  "id": "placeholder",
+                  "name": "Placeholder",
+                  "type": "Text",
+                  "config": {
+                    "label": "Placeholder Text",
+                    "placeholder": "Enter project description"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "item_fields",
+            "name": "Item Fields",
+            "type": "Group",
+            "config": {
+              "label": "Quote Item Fields",
+              "repeat": true,
+              "fields": [
+                {
+                  "id": "field_name",
+                  "name": "Field Name",
+                  "type": "Text",
+                  "config": {
+                    "label": "Field Name",
+                    "placeholder": "Item Description"
+                  }
+                },
+                {
+                  "id": "field_type",
+                  "name": "Field Type",
+                  "type": "Select",
+                  "config": {
+                    "label": "Field Type",
+                    "options": [
+                      {
+                        "value": "text",
+                        "label": "Text"
+                      },
+                      {
+                        "value": "number",
+                        "label": "Number"
+                      },
+                      {
+                        "value": "select",
+                        "label": "Select"
+                      }
+                    ],
+                    "default_value": "text"
+                  }
+                },
+                {
+                  "id": "required",
+                  "name": "Required",
+                  "type": "Boolean",
+                  "config": {
+                    "label": "Required Field",
+                    "placeholder_false": "Optional",
+                    "placeholder_true": "Required"
+                  }
+                },
+                {
+                  "id": "placeholder",
+                  "name": "Placeholder",
+                  "type": "Text",
+                  "config": {
+                    "label": "Placeholder Text",
+                    "placeholder": "Enter item description"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "default_terms",
+      "name": "Default Terms",
+      "type": "StructuredText",
+      "config": {
+        "label": "Default Terms and Conditions",
+        "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+      }
+    },
+    {
+      "id": "template_settings",
+      "name": "Template Settings",
+      "type": "Group",
+      "config": {
+        "label": "Template Settings",
+        "fields": [
+          {
+            "id": "vat_included",
+            "name": "VAT Included",
+            "type": "Boolean",
+            "config": {
+              "label": "VAT Included by Default",
+              "placeholder_false": "VAT excluded",
+              "placeholder_true": "VAT included"
+            }
+          },
+          {
+            "id": "vat_rate",
+            "name": "VAT Rate",
+            "type": "Number",
+            "config": {
+              "label": "VAT Rate (%)",
+              "placeholder": "25"
+            }
+          },
+          {
+            "id": "currency",
+            "name": "Currency",
+            "type": "Select",
+            "config": {
+              "label": "Currency",
+              "options": [
+                {
+                  "value": "DKK",
+                  "label": "Danish Krone (DKK)"
+                },
+                {
+                  "value": "EUR",
+                  "label": "Euro (EUR)"
+                },
+                {
+                  "value": "USD",
+                  "label": "US Dollar (USD)"
+                },
+                {
+                  "value": "SEK",
+                  "label": "Swedish Krona (SEK)"
+                },
+                {
+                  "value": "NOK",
+                  "label": "Norwegian Krone (NOK)"
+                }
+              ],
+              "default_value": "DKK"
+            }
+          },
+          {
+            "id": "validity_days",
+            "name": "Validity Days",
+            "type": "Number",
+            "config": {
+              "label": "Default Quote Validity (Days)",
+              "placeholder": "30"
+            }
+          },
+          {
+            "id": "payment_terms",
+            "name": "Payment Terms",
+            "type": "Text",
+            "config": {
+              "label": "Default Payment Terms",
+              "placeholder": "Net 14 days"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "seo_title",
+      "name": "SEO Title",
+      "type": "Text",
+      "config": {
+        "label": "SEO Title",
+        "placeholder": "Professional Handyman Quote Template - Free Download"
+      }
+    },
+    {
+      "id": "seo_description",
+      "name": "SEO Description",
+      "type": "Text",
+      "config": {
+        "label": "SEO Description",
+        "placeholder": "Download our free handyman quote template and create professional quotes in minutes."
+      }
+    },
+    {
+      "id": "seo_image",
+      "name": "SEO Image",
+      "type": "Image",
+      "config": {
+        "label": "SEO Image",
+        "constraint": {
+          "width": 1200,
+          "height": 630
+        }
+      }
+    },
+    {
+      "id": "seo_keywords",
+      "name": "SEO Keywords",
+      "type": "Text",
+      "config": {
+        "label": "SEO Keywords",
+        "placeholder": "handyman quote template, quote generator, professional quotes"
+      }
+    },
+    {
+      "id": "featured",
+      "name": "Featured",
+      "type": "Boolean",
+      "config": {
+        "label": "Featured Template",
+        "placeholder_false": "Not featured",
+        "placeholder_true": "Featured template"
+      }
+    },
+    {
+      "id": "status",
+      "name": "Status",
+      "type": "Select",
+      "config": {
+        "label": "Template Status",
+        "options": [
+          {
+            "value": "draft",
+            "label": "Draft"
+          },
+          {
+            "value": "published",
+            "label": "Published"
+          },
+          {
+            "value": "archived",
+            "label": "Archived"
+          }
+        ],
+        "default_value": "draft"
+      }
+    }
+  ]
+}

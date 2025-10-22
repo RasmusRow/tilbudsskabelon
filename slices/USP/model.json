@@ -1,0 +1,39 @@
+{
+  "id": "usp",
+  "type": "SharedSlice",
+  "name": "USP",
+  "description": "Unique Selling Points grid",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "items": {
+        "icon": {
+          "type": "Text",
+          "config": {
+            "label": "Icon",
+            "placeholder": "Icon class or SVG"
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "USP Title",
+            "placeholder": "Fast & Efficient"
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "USP Description",
+            "placeholder": "Create quotes in minutes"
+          }
+        }
+      }
+    }
+  ]
+}

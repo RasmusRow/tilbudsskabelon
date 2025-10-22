@@ -1,0 +1,130 @@
+{
+  "id": "faq",
+  "name": "FAQ",
+  "description": "Frequently Asked Questions",
+  "icon": "help",
+  "tabs": [
+    {
+      "key": "content",
+      "displayName": "Content"
+    },
+    {
+      "key": "settings",
+      "displayName": "Settings"
+    }
+  ],
+  "fields": [
+    {
+      "id": "question",
+      "name": "Question",
+      "type": "Text",
+      "config": {
+        "label": "Question",
+        "placeholder": "How do I create a quote?"
+      }
+    },
+    {
+      "id": "answer",
+      "name": "Answer",
+      "type": "StructuredText",
+      "config": {
+        "label": "Answer",
+        "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+      }
+    },
+    {
+      "id": "category",
+      "name": "Category",
+      "type": "Select",
+      "config": {
+        "label": "FAQ Category",
+        "options": [
+          {
+            "value": "general",
+            "label": "General"
+          },
+          {
+            "value": "account",
+            "label": "Account"
+          },
+          {
+            "value": "billing",
+            "label": "Billing"
+          },
+          {
+            "value": "technical",
+            "label": "Technical"
+          },
+          {
+            "value": "templates",
+            "label": "Templates"
+          },
+          {
+            "value": "support",
+            "label": "Support"
+          }
+        ],
+        "default_value": "general"
+      }
+    },
+    {
+      "id": "tags",
+      "name": "Tags",
+      "type": "Text",
+      "config": {
+        "label": "Tags",
+        "placeholder": "quote, template, billing"
+      }
+    },
+    {
+      "id": "order",
+      "name": "Order",
+      "type": "Number",
+      "config": {
+        "label": "Display Order",
+        "placeholder": "1"
+      }
+    },
+    {
+      "id": "featured",
+      "name": "Featured",
+      "type": "Boolean",
+      "config": {
+        "label": "Featured FAQ",
+        "placeholder_false": "Not featured",
+        "placeholder_true": "Featured FAQ"
+      }
+    },
+    {
+      "id": "status",
+      "name": "Status",
+      "type": "Select",
+      "config": {
+        "label": "Publication Status",
+        "options": [
+          {
+            "value": "draft",
+            "label": "Draft"
+          },
+          {
+            "value": "published",
+            "label": "Published"
+          },
+          {
+            "value": "archived",
+            "label": "Archived"
+          }
+        ],
+        "default_value": "draft"
+      }
+    },
+    {
+      "id": "last_updated",
+      "name": "Last Updated",
+      "type": "Date",
+      "config": {
+        "label": "Last Updated"
+      }
+    }
+  ]
+}

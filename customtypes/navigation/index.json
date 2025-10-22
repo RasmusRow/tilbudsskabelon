@@ -1,0 +1,25 @@
+{
+  "format": "custom",
+  "id": "navigation",
+  "json": {
+    "Main": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": "navigation Title"
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": "navigation description"
+        }
+      }
+    }
+  },
+  "label": "navigation",
+  "repeatable": true,
+  "status": true
+}

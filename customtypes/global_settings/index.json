@@ -1,0 +1,257 @@
+{
+  "format": "custom",
+  "id": "global_settings",
+  "label": "Global Settings",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Header": {
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Header Logo",
+          "constraint": {
+            "width": 200,
+            "height": 100
+          },
+          "thumbnails": [
+            {
+              "name": "mobile",
+              "width": 100,
+              "height": 50
+            }
+          ]
+        }
+      },
+      "menu_items": {
+        "type": "Group",
+        "config": {
+          "label": "Navigation Menu Items",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Menu Label",
+                "placeholder": "Home"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Menu Link",
+                "placeholder": "/"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Footer": {
+      "about_title": {
+        "type": "Text",
+        "config": {
+          "label": "About Section Title",
+          "placeholder": "Om tilbudsskabelon.dk"
+        }
+      },
+      "about_description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "About Description",
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+          "placeholder": "Tilbudsskabelon.dk er en platform, der gør det nemt for virksomheder at lave skræddersyede og professionelle tilbud."
+        }
+      },
+      "quick_links_title": {
+        "type": "Text",
+        "config": {
+          "label": "Quick Links Section Title",
+          "placeholder": "Hurtige links"
+        }
+      },
+      "quick_links": {
+        "type": "Group",
+        "config": {
+          "label": "Quick Links",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Link Label",
+                "placeholder": "Hjem"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link URL",
+                "placeholder": "/"
+              }
+            }
+          }
+        }
+      },
+      "contact_title": {
+        "type": "Text",
+        "config": {
+          "label": "Contact Section Title",
+          "placeholder": "Kontakt os"
+        }
+      },
+      "contact_email": {
+        "type": "Text",
+        "config": {
+          "label": "Contact Email",
+          "placeholder": "support@tilbudsskabelon.dk"
+        }
+      },
+      "contact_phone": {
+        "type": "Text",
+        "config": {
+          "label": "Contact Phone",
+          "placeholder": "+45 12345678"
+        }
+      },
+      "company_address": {
+        "type": "Text",
+        "config": {
+          "label": "Company Address",
+          "placeholder": "Company Street 123, 2100 Copenhagen"
+        }
+      },
+      "copyright_text": {
+        "type": "Text",
+        "config": {
+          "label": "Copyright Text",
+          "placeholder": "© 2024 Tilbudsskabelon.dk. Alle rettigheder forbeholdes."
+        }
+      }
+    },
+    "SEO": {
+      "site_title": {
+        "type": "Text",
+        "config": {
+          "label": "Site Title",
+          "placeholder": "Tilbudsskabelon.dk"
+        }
+      },
+      "site_description": {
+        "type": "Text",
+        "config": {
+          "label": "Site Description",
+          "placeholder": "Professional quote templates for Danish businesses"
+        }
+      },
+      "default_seo_title": {
+        "type": "Text",
+        "config": {
+          "label": "Default SEO Title",
+          "placeholder": "Tilbudsskabelon.dk - Professional Quote Templates"
+        }
+      },
+      "default_seo_description": {
+        "type": "Text",
+        "config": {
+          "label": "Default SEO Description",
+          "placeholder": "Create professional quotes quickly and easily with our Danish quote template platform."
+        }
+      },
+      "default_seo_image": {
+        "type": "Image",
+        "config": {
+          "label": "Default SEO Image",
+          "constraint": {
+            "width": 1200,
+            "height": 630
+          }
+        }
+      },
+      "favicon": {
+        "type": "Image",
+        "config": {
+          "label": "Favicon",
+          "constraint": {
+            "width": 32,
+            "height": 32
+          }
+        }
+      }
+    },
+    "Social": {
+      "facebook_url": {
+        "type": "Text",
+        "config": {
+          "label": "Facebook Page URL",
+          "placeholder": "https://facebook.com/tilbudsskabelon"
+        }
+      },
+      "linkedin_url": {
+        "type": "Text",
+        "config": {
+          "label": "LinkedIn Page URL",
+          "placeholder": "https://linkedin.com/company/tilbudsskabelon"
+        }
+      },
+      "twitter_url": {
+        "type": "Text",
+        "config": {
+          "label": "Twitter Profile URL",
+          "placeholder": "https://twitter.com/tilbudsskabelon"
+        }
+      },
+      "instagram_url": {
+        "type": "Text",
+        "config": {
+          "label": "Instagram Profile URL",
+          "placeholder": "https://instagram.com/tilbudsskabelon"
+        }
+      }
+    },
+    "Analytics": {
+      "google_analytics_id": {
+        "type": "Text",
+        "config": {
+          "label": "Google Analytics ID",
+          "placeholder": "G-KYEV6WW3GJ"
+        }
+      },
+      "google_tag_manager_id": {
+        "type": "Text",
+        "config": {
+          "label": "Google Tag Manager ID",
+          "placeholder": "GTM-XXXXXXX"
+        }
+      },
+      "facebook_pixel_id": {
+        "type": "Text",
+        "config": {
+          "label": "Facebook Pixel ID",
+          "placeholder": "123456789012345"
+        }
+      }
+    },
+    "Legal": {
+      "privacy_policy": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Privacy Policy",
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "terms_of_service": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Terms of Service",
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "cookie_policy": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Cookie Policy",
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      }
+    }
+  }
+}

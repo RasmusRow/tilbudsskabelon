@@ -1,0 +1,25 @@
+{
+  "format": "custom",
+  "id": "team-member",
+  "json": {
+    "Main": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": "team-member Title"
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": "team-member description"
+        }
+      }
+    }
+  },
+  "label": "team-member",
+  "repeatable": true,
+  "status": true
+}

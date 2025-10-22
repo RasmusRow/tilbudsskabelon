@@ -1,30 +1,22 @@
+import { apiEndpoint, repositoryName } from "./slicemachine.config.json";
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: false },
+
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxt/image",
     "@nuxtjs/robots",
     "@nuxtjs/sitemap",
+    "@nuxtjs/prismic"
   ],
-  plugins: ["~/plugins/firebase.client.ts"],
 
   runtimeConfig: {
     public: {
-      firebaseApiKey: process.env.FIREBASE_API_KEY,
-      firebaseAuthDomain: process.env.FIREBASE_AUTH_DOMAIN,
-      firebaseProjectId: process.env.FIREBASE_PROJECT_ID,
-      firebaseStorageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-      firebaseMessagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-      firebaseAppId: process.env.FIREBASE_APP_ID,
-      siteUrl: "https://tilbudsskabelon.dk", // Add the site URL here
-    },
-    private: {
-      firebaseProjectId: process.env.FIREBASE_PROJECT_ID,
-      firebaseClientEmail: process.env.PRIVATE_FIREBASE_CLIENT_EMAIL,
-      firebasePrivateKey: process.env.PRIVATE_FIREBASE_PRIVATE_KEY,
+      siteUrl: "https://tilbudsskabelon.dk",
     },
   },
+
   head: {
     title: "GRATIS tilbudsskabelon til håndværkere og freelancere",
     htmlAttrs: {
@@ -87,19 +79,23 @@ export default defineNuxtConfig({
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
+
   image: {
     domains: ["tilbudsskabelon.dk"],
   },
+
   sitemap: {
     hostname: "https://tilbudsskabelon.dk", // Use hostname instead of url
     gzip: true,
     routes: ["/", "/om-os", "/priser", "/kontakt"],
   },
+
   robots: {
     UserAgent: "*",
     Disallow: "/admin",
     Sitemap: "https://tilbudsskabelon.dk/sitemap.xml",
   },
+
   pwa: {
     meta: {
       title: "Tilbudsskabelon.dk",
@@ -111,14 +107,42 @@ export default defineNuxtConfig({
       lang: "da",
     },
   },
+
   site: {
     url: "https://tilbudsskabelon.dk",
   },
+
   ssr: true,
+
   axios: {
     baseURL: "/",
   },
+
   generate: {
     fallback: true,
   },
+
+  prismic: {
+    endpoint: apiEndpoint || repositoryName,
+    clientConfig: {
+      routes: [
+        {
+          type: 'page',
+          path: '/:uid'
+        },
+        {
+          type: 'guide',
+          path: '/tips-og-gode-raad/:uid'
+        }
+      ]
+    }
+  },
+
+  // Auto-import Prismic Vue components
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    }
+  ]
 });

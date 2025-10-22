@@ -1,0 +1,10 @@
+{
+  "libraries": [
+    {
+      "name": "slices",
+      "path": "./slices"
+    }
+  ],
+  "apiEndpoint": "https://tilbudsskabelon.prismic.io/api/v2",
+  "framework": "nuxt"
+}
