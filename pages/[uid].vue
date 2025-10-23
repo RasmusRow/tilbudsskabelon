@@ -32,6 +32,7 @@
 
 <script setup>
 const { getPage } = usePrismicData()
+const { setPageSEO } = useSEO()
 const route = useRoute()
 
 // Fetch page from Prismic
@@ -50,32 +51,8 @@ if (!page.value) {
 // Import slice components from the global index
 import { components as sliceComponents } from '~/slices'
 
-// Set SEO from Prismic
-useHead({
-    title: page.value?.data?.meta_title || page.value?.data?.title || 'Page',
-    meta: [
-        {
-            name: 'description',
-            content: page.value?.data?.meta_description || 'Page content'
-        },
-        {
-            property: 'og:title',
-            content: page.value?.data?.meta_title || page.value?.data?.title || 'Page'
-        },
-        {
-            property: 'og:description',
-            content: page.value?.data?.meta_description || 'Page content'
-        },
-        {
-            property: 'og:image',
-            content: page.value?.data?.meta_image?.url || '/images/seo-cover.png'
-        },
-        {
-            property: 'og:url',
-            content: `https://tilbudsskabelon.dk/${route.params.uid}`
-        }
-    ]
-})
+// Set SEO with proper fallback to Global Settings
+await setPageSEO(page.value?.data, 'page')
 </script>
 
 <style scoped>

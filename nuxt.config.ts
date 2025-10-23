@@ -133,6 +133,10 @@ export default defineNuxtConfig({
         {
           type: 'guide',
           path: '/tips-og-gode-raad/:uid'
+        },
+        {
+          type: 'blog-post',
+          path: '/artikel/:uid'
         }
       ]
     }

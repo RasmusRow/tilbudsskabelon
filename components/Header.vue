@@ -66,6 +66,14 @@
           :kind="getNavigationUrl(item.link) === '/lav-tilbud' ? 'primary' : 'link'">
           {{ item.label }}
         </Button>
+
+        <Button
+          link="/lav-tilbud"
+          class="text-lg"
+          kind="primary"
+        >
+          Lav et tilbud
+        </Button>
       </div>
     </div>
   </header>

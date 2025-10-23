@@ -34,14 +34,41 @@ useHead({
   ],
 })
 
-// Set site title and meta from Prismic
+// Set default site title and meta from Global Settings (fallback for pages without specific SEO)
 useHead({
   title: globalSettings.value?.seo?.site_title || 'Tilbudsskabelon.dk',
   meta: [
     {
       name: 'description',
       content: globalSettings.value?.seo?.site_description || 'Professional quote templates for Danish businesses'
+    },
+    {
+      name: 'keywords',
+      content: 'tilbudsskabelon, tilbud, faktura, virksomhed, generer tilbud, nem tilbudsskabelon'
+    },
+    {
+      name: 'author',
+      content: 'Tilbudsskabelon Team'
+    },
+    {
+      name: 'robots',
+      content: 'index,follow'
+    },
+    {
+      property: 'og:site_name',
+      content: globalSettings.value?.seo?.site_title || 'Tilbudsskabelon.dk'
+    },
+    {
+      property: 'og:locale',
+      content: 'da_DK'
+    },
+    {
+      property: 'og:type',
+      content: 'website'
     }
+  ],
+  link: [
+    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
   ]
 })
 </script>

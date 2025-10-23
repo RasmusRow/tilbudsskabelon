@@ -20,35 +20,21 @@
 
 <script setup>
 const { getGuides } = usePrismicData()
+const { setPageSEO } = useSEO()
 
 // Fetch guides from Prismic
 const { data: guides } = await useAsyncData('guides', () => getGuides('tips'))
 
-useHead({
+// Create page data for SEO
+const pageData = {
   title: "Tips & gode råd til at få succes med tilbud",
-  meta: [
-    {
-      name: "description",
-      content: "Få tips og gode råd til at skrive det perfekte tilbud, forbedre din markedsføring og optimere dine resultater. Vi tilbyder ressourcer og vejledning til at skabe bedre tilbud.",
-    },
-    {
-      property: "og:title",
-      content: "Tips & gode råd til at få succes med tilbud",
-    },
-    {
-      property: "og:description",
-      content: "Læs vores tips til at skrive gode tilbud, markedsføring og få flere kunder.",
-    },
-    {
-      property: "og:image",
-      content: "https://www.tilbudsskabelon.dk/images/seo-cover.png",
-    },
-    {
-      property: "og:url",
-      content: "https://www.tilbudsskabelon.dk/tips-og-gode-raad",
-    },
-  ],
-});
+  meta_title: "Tips & gode råd til at få succes med tilbud",
+  meta_description: "Få tips og gode råd til at skrive det perfekte tilbud, forbedre din markedsføring og optimere dine resultater. Vi tilbyder ressourcer og vejledning til at skabe bedre tilbud.",
+  meta_image: { url: "/images/seo-cover.png" }
+}
+
+// Set SEO with proper fallback to Global Settings
+await setPageSEO(pageData, 'page')
 </script>
 
 <style scoped>

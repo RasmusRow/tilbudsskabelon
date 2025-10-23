@@ -43,6 +43,43 @@ export const usePrismicData = () => {
     }
   }
 
+  const getBlogPost = async (slug: string) => {
+    try {
+      // First try to get by UID
+      const blogPost = await client.getByUID('blog-post', slug)
+      return blogPost
+    } catch (error) {
+      try {
+        // If that fails, try to get all blog posts and find by slug
+        const allBlogPosts = await client.getAllByType('blog-post')
+        // Look for blog post by slug in the slugs array
+        const blogPost = allBlogPosts.find(post => {
+          if (!post.slugs) return false
+          
+          const found = post.slugs.some(postSlug => {
+            const matches = postSlug === slug || 
+                           decodeURIComponent(postSlug) === slug ||
+                           postSlug === encodeURIComponent(slug)
+            
+            
+            return matches
+          })
+          
+          return found
+        })
+        
+        if (blogPost) {
+          return blogPost
+        }
+        console.warn(`No blog post found with slug: ${slug}. Available slugs: ${allBlogPosts.map(p => p.slugs?.join(', ') || 'none').join(' | ')}`)
+        return null
+      } catch (error2) {
+        console.warn(`No blog post found with slug: ${slug}. This is normal if no blog posts have been created in Prismic yet.`)
+        return null
+      }
+    }
+  }
+
   const getGuides = async (category?: string) => {
     try {
       const guides = await client.getAllByType('guide', {
@@ -106,6 +143,7 @@ export const usePrismicData = () => {
     getHomePage,
     getPage,
     getGuide,
+    getBlogPost,
     getGuides,
     getNavigation,
     getQuoteTemplates,

@@ -1,39 +1,16 @@
 <script setup>
-useHead({
-  title:
-    "Sådan skriver du et godt håndværkertilbud - Skabelon til håndværkertilbud | Tilbudsskabelon",
-  meta: [
-    {
-      name: "description",
-      content:
-        "Komplet guide til at skrive et godt håndværkertilbud. Brug vores håndværkertilbudsskabelon til at vinde flere kunder med et gennemført tilbud.",
-    },
-    {
-      name: "keywords",
-      content:
-        "Håndværkertilbud, Skabelon til håndværkertilbud, Lav et håndværkertilbud, Sådan skriver du et håndværkertilbud, Håndværkertilbudsguide, Skriv håndværkertilbud",
-    },
-    {
-      property: "og:title",
-      content:
-        "Sådan skriver du et godt håndværkertilbud - Skabelon til håndværkertilbud | Tilbudsskabelon",
-    },
-    {
-      property: "og:description",
-      content:
-        "Opdag en komplet guide og skabelon til at skrive håndværkertilbud, der vinder kunder. Lær, hvordan du laver håndværkertilbud effektivt.",
-    },
-    {
-      property: "og:type",
-      content: "article",
-    },
-    {
-      property: "og:image",
-      content:
-        "https://tilbudsskabelon.dk/images/handvaerker-tilbud.png",
-    },
-  ],
-});
+const { setPageSEO } = useSEO()
+
+// Create page data for SEO
+const pageData = {
+  title: "Sådan skriver du et godt håndværkertilbud",
+  meta_title: "Sådan skriver du et godt håndværkertilbud - Skabelon til håndværkertilbud | Tilbudsskabelon",
+  meta_description: "Komplet guide til at skrive et godt håndværkertilbud. Brug vores håndværkertilbudsskabelon til at vinde flere kunder med et gennemført tilbud.",
+  meta_image: { url: "/images/handvaerker-tilbud.png" }
+}
+
+// Set SEO with proper fallback to Global Settings
+await setPageSEO(pageData, 'blog-post')
 </script>
 
 <template>

@@ -19,47 +19,18 @@
 </template>
 
 <script setup>
+const { setPageSEO } = useSEO()
 
-useHead({
+// Create page data for SEO
+const pageData = {
   title: "Lav et tilbud med vores tilbudsskabelon",
-  meta: [
-    {
-      name: "description",
-      content:
-        "Generer professionelle tilbud med Tilbudsskabelon.dk. Udfyld firma- og kundeoplysninger, beskrivelse og betingelser for at oprette et tilbud.",
-    },
-    {
-      name: "keywords",
-      content:
-        "tilbudsskabelon, generer tilbud, tilbudsformular, tilbud generator",
-    },
-    {
-      name: "robots",
-      content: "index, follow",
-    },
-    {
-      property: "og:title",
-      content: "Generer tilbud - Tilbudsskabelon.dk",
-    },
-    {
-      property: "og:description",
-      content:
-        "Lav professionelle tilbud nemt og hurtigt med Tilbudsskabelon.dk.",
-    },
-    {
-      property: "og:type",
-      content: "website",
-    },
-    {
-      property: "og:url",
-      content: "https://www.tilbudsskabelon.dk/lav-tilbud", // Replace with your actual URL
-    },
-    {
-      property: "og:image",
-      content: "https://www.tilbudsskabelon.dk/images/seo-cover.png", // Replace with your actual image URL
-    },
-  ],
-});
+  meta_title: "Lav et tilbud med vores tilbudsskabelon",
+  meta_description: "Generer professionelle tilbud med Tilbudsskabelon.dk. Udfyld firma- og kundeoplysninger, beskrivelse og betingelser for at oprette et tilbud.",
+  meta_image: { url: "/images/seo-cover.png" }
+}
+
+// Set SEO with proper fallback to Global Settings
+await setPageSEO(pageData, 'page')
 </script>
 
 <style></style>

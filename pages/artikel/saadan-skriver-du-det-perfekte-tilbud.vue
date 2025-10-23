@@ -1,38 +1,16 @@
 <script setup>
-useHead({
-  title:
-    "Sådan skriver du det perfekte tilbud - Skabelon til tilbud | Tilbudsskabelon",
-  meta: [
-    {
-      name: "description",
-      content:
-        "Komplet guide til at skrive det perfekte tilbud. Brug vores tilbudsskabelon til at vinde flere kunder med et gennemført tilbud.",
-    },
-    {
-      name: "keywords",
-      content:
-        "Skabelon til tilbud, Tilbudsskabelon, Lav et tilbud, Sådan skriver du et tilbud, Tilbudsguide, Skriv tilbud",
-    },
-    {
-      property: "og:title",
-      content:
-        "Sådan skriver du det perfekte tilbud - Skabelon til tilbud | Tilbudsskabelon",
-    },
-    {
-      property: "og:description",
-      content:
-        "Opdag en komplet guide og skabelon til at skrive tilbud, der vinder kunder. Lær, hvordan du laver tilbud effektivt.",
-    },
-    {
-      property: "og:type",
-      content: "article",
-    },
-    {
-      property: "og:image",
-      content: "https://tilbudsskabelon.dk/images/skriv-et-perfekt-tilbud.png",
-    },
-  ],
-});
+const { setPageSEO } = useSEO()
+
+// Create page data for SEO
+const pageData = {
+  title: "Sådan skriver du det perfekte tilbud",
+  meta_title: "Sådan skriver du det perfekte tilbud - Skabelon til tilbud | Tilbudsskabelon",
+  meta_description: "Komplet guide til at skrive det perfekte tilbud. Brug vores tilbudsskabelon til at vinde flere kunder med et gennemført tilbud.",
+  meta_image: { url: "/images/skriv-et-perfekt-tilbud.png" }
+}
+
+// Set SEO with proper fallback to Global Settings
+await setPageSEO(pageData, 'blog-post')
 </script>
 
 <template>

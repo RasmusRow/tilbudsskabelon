@@ -26,10 +26,7 @@
         "type": "Image",
         "config": {
           "label": "Featured Image",
-          "constraint": {
-            "width": 800,
-            "height": 600
-          }
+          "placeholder": "Add a featured image for this blog post"
         }
       },
       "excerpt": {
@@ -49,7 +46,8 @@
       "publish_date": {
         "type": "Date",
         "config": {
-          "label": "Publish Date"
+          "label": "Publish Date",
+          "placeholder": "Select publish date"
         }
       }
     },
@@ -57,25 +55,22 @@
       "meta_title": {
         "type": "Text",
         "config": {
-          "label": "SEO Title",
-          "placeholder": "Blog Post Title - Tilbudsskabelon.dk"
+          "label": "Meta Title",
+          "placeholder": "SEO title for search engines"
         }
       },
       "meta_description": {
         "type": "Text",
         "config": {
-          "label": "SEO Description",
-          "placeholder": "Blog post description for search engines"
+          "label": "Meta Description",
+          "placeholder": "SEO description for search engines"
         }
       },
       "meta_image": {
         "type": "Image",
         "config": {
-          "label": "SEO Image",
-          "constraint": {
-            "width": 1200,
-            "height": 630
-          }
+          "label": "Meta Image",
+          "placeholder": "SEO image for social sharing"
         }
       }
     }
