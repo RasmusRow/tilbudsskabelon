@@ -103,7 +103,7 @@
 const { getGlobalSettings } = usePrismicData()
 
 // Fetch global settings from Prismic
-const { data: globalSettings } = await useAsyncData('global-settings', () => getGlobalSettings())
+const { data: globalSettings } = await useAsyncData('global-settings-footer', () => getGlobalSettings())
 </script>
 
 <style scoped>

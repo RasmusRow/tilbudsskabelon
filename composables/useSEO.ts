@@ -4,13 +4,13 @@ export const useSEO = () => {
   const { getGlobalSettings } = usePrismicData()
 
   const getSEOData = async (pageData?: any, pageType?: 'home' | 'page' | 'blog-post') => {
-    // Fetch global settings for fallback with unique key
-    const { data: globalSettings } = await useAsyncData('global-settings-seo-fallback', () => getGlobalSettings())
-    
-    // Extract SEO data from page
-    const pageTitle = pageData?.meta_title || pageData?.title
-    const pageDescription = pageData?.meta_description || pageData?.excerpt
-    const pageImage = pageData?.meta_image || pageData?.featured_image
+    // Fetch global settings for fallback with unique key - use a more specific key
+    const { data: globalSettings } = await useAsyncData(`global-settings-seo-${pageType || 'default'}`, () => getGlobalSettings())
+    console.log('globalSettings for', pageType, ':', globalSettings.value)
+    // Extract SEO data from page - check both direct and nested seo object
+    const pageTitle = pageData?.seo?.meta_title || pageData?.meta_title 
+    const pageDescription = pageData?.seo?.meta_description || pageData?.meta_description
+    const pageImage = pageData?.seo?.meta_image || pageData?.meta_image
 
     // Fallback hierarchy: Page specific -> Global Settings -> Hardcoded defaults
     const seoTitle = pageTitle || 
@@ -26,6 +26,16 @@ export const useSEO = () => {
     const seoImage = pageImage?.url || 
                     globalSettings.value?.seo?.default_seo_image?.url || 
                     '/images/seo-cover.png'
+
+    console.log('SEO Data:', {
+      pageTitle,
+      pageDescription,
+      pageImage,
+      globalSettings: globalSettings.value,
+      finalTitle: seoTitle,
+      finalDescription: seoDescription,
+      finalImage: seoImage
+    })
 
     // Generate canonical URL safely
     const route = useRoute()
@@ -78,8 +88,19 @@ export const useSEO = () => {
 
   const setPageSEO = async (pageData?: any, pageType?: 'home' | 'page' | 'blog-post') => {
     try {
+      console.log('Setting SEO for page type:', pageType, 'with data:', pageData)
       const seoData = await getSEOData(pageData, pageType)
-      const metaTags = generateMetaTags(seoData)
+      
+      if (!seoData) {
+        console.warn('No SEO data generated, using fallback')
+        useSeoMeta({
+          title: 'Tilbudsskabelon.dk',
+          description: 'Professional quote templates for Danish businesses'
+        })
+        return null
+      }
+
+      console.log('Setting SEO meta with:', seoData)
 
       // Use useSeoMeta for better SSR compatibility
       useSeoMeta({
@@ -87,7 +108,7 @@ export const useSEO = () => {
         description: seoData.description,
         ogTitle: seoData.title,
         ogDescription: seoData.description,
-        ogType: seoData.type,
+        ogType: seoData.type as 'article' | 'website',
         ogUrl: seoData.canonicalUrl,
         ogImage: seoData.image,
         ogLocale: seoData.locale,
