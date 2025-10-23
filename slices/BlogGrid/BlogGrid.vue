@@ -37,7 +37,7 @@ const getBlogPostDescription = (description: any) => {
         <NuxtLink
           v-for="(blogItem, index) in slice.primary?.blog_posts"
           :key="index"
-          :to="`/artikel/${blogItem.blog_post?.slugs?.[0] || blogItem.blog_post?.uid}`"
+          :to="`/artikel/${blogItem.blog_post?.slugs?.[0] || blogItem.blog_post?.slug}`"
           class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 lg:col-span-1 block"
         >
           <!-- Blog Post Image -->
@@ -126,7 +126,7 @@ const getBlogPostDescription = (description: any) => {
             
             <!-- Read More Link -->
             <NuxtLink
-              v-if="item.blog_post?.uid"
+              v-if="item.blog_post?.slug"
               :to="`/artikel/${item.blog_post?.slugs?.[0] || item.blog_post?.uid}`"
               class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
             >

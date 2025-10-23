@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-50">
+  <div class="min-h-screen">
     <div class="container mx-auto py-12 px-4">
       <article v-if="blogPost" class="max-w-4xl mx-auto">
         <!-- Blog Post Header -->
