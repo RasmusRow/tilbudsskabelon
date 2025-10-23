@@ -12,14 +12,16 @@
 <script setup>
 const { getGlobalSettings } = usePrismicData()
 
-// Fetch global settings
-const { data: globalSettings } = await useAsyncData('global-settings', () => getGlobalSettings())
+// Fetch global settings with error handling
+const { data: globalSettings } = await useAsyncData('global-settings-app', () => getGlobalSettings())
 
-// Set up Google Analytics from Prismic settings
+// Set up Google Analytics from Prismic settings with fallback
+const analyticsId = globalSettings.value?.analytics?.google_analytics_id || 'G-KYEV6WW3GJ'
+
 useHead({
   script: [
     {
-      src: `https://www.googletagmanager.com/gtag/js?id=${globalSettings.value?.analytics?.google_analytics_id || 'G-KYEV6WW3GJ'}`,
+      src: `https://www.googletagmanager.com/gtag/js?id=${analyticsId}`,
       async: true,
     },
     {
@@ -27,7 +29,7 @@ useHead({
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', '${globalSettings.value?.analytics?.google_analytics_id || 'G-KYEV6WW3GJ'}');
+        gtag('config', '${analyticsId}');
       `,
       type: "text/javascript",
     },
@@ -35,38 +37,23 @@ useHead({
 })
 
 // Set default site title and meta from Global Settings (fallback for pages without specific SEO)
+const siteTitle = globalSettings.value?.seo?.site_title || 'Tilbudsskabelon.dk'
+const siteDescription = globalSettings.value?.seo?.site_description || 'Professional quote templates for Danish businesses'
+
+useSeoMeta({
+  title: siteTitle,
+  description: siteDescription,
+  keywords: 'tilbudsskabelon, tilbud, faktura, virksomhed, generer tilbud, nem tilbudsskabelon',
+  author: 'Tilbudsskabelon Team',
+  robots: 'index,follow',
+  ogSiteName: siteTitle,
+  ogLocale: 'da_DK',
+  ogType: 'website',
+  themeColor: '#ffffff',
+  msapplicationTileColor: '#ffffff'
+})
+
 useHead({
-  title: globalSettings.value?.seo?.site_title || 'Tilbudsskabelon.dk',
-  meta: [
-    {
-      name: 'description',
-      content: globalSettings.value?.seo?.site_description || 'Professional quote templates for Danish businesses'
-    },
-    {
-      name: 'keywords',
-      content: 'tilbudsskabelon, tilbud, faktura, virksomhed, generer tilbud, nem tilbudsskabelon'
-    },
-    {
-      name: 'author',
-      content: 'Tilbudsskabelon Team'
-    },
-    {
-      name: 'robots',
-      content: 'index,follow'
-    },
-    {
-      property: 'og:site_name',
-      content: globalSettings.value?.seo?.site_title || 'Tilbudsskabelon.dk'
-    },
-    {
-      property: 'og:locale',
-      content: 'da_DK'
-    },
-    {
-      property: 'og:type',
-      content: 'website'
-    }
-  ],
   link: [
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
   ]

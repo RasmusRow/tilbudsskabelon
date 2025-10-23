@@ -4,8 +4,8 @@ export const useSEO = () => {
   const { getGlobalSettings } = usePrismicData()
 
   const getSEOData = async (pageData?: any, pageType?: 'home' | 'page' | 'blog-post') => {
-    // Fetch global settings for fallback
-    const { data: globalSettings } = await useAsyncData('global-settings-seo', () => getGlobalSettings())
+    // Fetch global settings for fallback with unique key
+    const { data: globalSettings } = await useAsyncData('global-settings-seo-fallback', () => getGlobalSettings())
     
     // Extract SEO data from page
     const pageTitle = pageData?.meta_title || pageData?.title
@@ -27,8 +27,9 @@ export const useSEO = () => {
                     globalSettings.value?.seo?.default_seo_image?.url || 
                     '/images/seo-cover.png'
 
-    // Generate canonical URL
-    const canonicalUrl = `https://tilbudsskabelon.dk${useRoute().path}`
+    // Generate canonical URL safely
+    const route = useRoute()
+    const canonicalUrl = `https://tilbudsskabelon.dk${route.path}`
 
     return {
       title: seoTitle,
@@ -76,18 +77,49 @@ export const useSEO = () => {
   }
 
   const setPageSEO = async (pageData?: any, pageType?: 'home' | 'page' | 'blog-post') => {
-    const seoData = await getSEOData(pageData, pageType)
-    const metaTags = generateMetaTags(seoData)
+    try {
+      const seoData = await getSEOData(pageData, pageType)
+      const metaTags = generateMetaTags(seoData)
 
-    useHead({
-      title: seoData.title,
-      meta: metaTags,
-      link: [
-        { rel: 'canonical', href: seoData.canonicalUrl }
-      ]
-    })
+      // Use useSeoMeta for better SSR compatibility
+      useSeoMeta({
+        title: seoData.title,
+        description: seoData.description,
+        ogTitle: seoData.title,
+        ogDescription: seoData.description,
+        ogType: seoData.type,
+        ogUrl: seoData.canonicalUrl,
+        ogImage: seoData.image,
+        ogLocale: seoData.locale,
+        ogSiteName: seoData.siteName,
+        twitterCard: 'summary_large_image',
+        twitterTitle: seoData.title,
+        twitterDescription: seoData.description,
+        twitterImage: seoData.image,
+        keywords: 'tilbudsskabelon, tilbud, faktura, virksomhed, generer tilbud, nem tilbudsskabelon',
+        author: 'Tilbudsskabelon Team',
+        robots: 'index,follow',
+        themeColor: '#ffffff',
+        msapplicationTileColor: '#ffffff'
+      })
 
-    return seoData
+      // Set canonical URL separately
+      useHead({
+        link: [
+          { rel: 'canonical', href: seoData.canonicalUrl }
+        ]
+      })
+
+      return seoData
+    } catch (error) {
+      console.error('SEO setup error:', error)
+      // Fallback to basic SEO
+      useSeoMeta({
+        title: 'Tilbudsskabelon.dk',
+        description: 'Professional quote templates for Danish businesses'
+      })
+      return null
+    }
   }
 
   return {
