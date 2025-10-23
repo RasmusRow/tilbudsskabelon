@@ -54,9 +54,6 @@
             "usp": {
               "type": "SharedSlice"
             },
-            "info": {
-              "type": "SharedSlice"
-            },
             "rich_text": {
               "type": "SharedSlice"
             },
@@ -64,9 +61,6 @@
               "type": "SharedSlice"
             },
             "image": {
-              "type": "SharedSlice"
-            },
-            "gallery": {
               "type": "SharedSlice"
             },
             "quote_form": {
@@ -78,10 +72,10 @@
             "faq": {
               "type": "SharedSlice"
             },
-            "testimonial": {
+            "contact_form": {
               "type": "SharedSlice"
             },
-            "contact_form": {
+            "blog_grid": {
               "type": "SharedSlice"
             }
           }

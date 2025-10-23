@@ -26,7 +26,7 @@ export const usePrismicData = () => {
   const getPage = async (uid: string) => {
     try {
       const page = await client.getByUID('page', uid)
-      return page.data
+      return page
     } catch (error) {
       console.warn(`No page found with UID: ${uid}. This is normal if no pages have been created in Prismic yet.`)
       return null

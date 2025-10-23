@@ -52,10 +52,8 @@ const { data: guide } = await useAsyncData(`guide-${route.params.uid}`, () =>
 const sliceComponents = {
   rich_text: () => import('~/slices/RichText/RichText.vue'),
   image: () => import('~/slices/Image/Image.vue'),
-  gallery: () => import('~/slices/Gallery/Gallery.vue'),
   cta: () => import('~/slices/CTA/CTA.vue'),
-  faq: () => import('~/slices/FAQ/FAQ.vue'),
-  testimonial: () => import('~/slices/Testimonial/Testimonial.vue')
+  faq: () => import('~/slices/FAQ/FAQ.vue')
 }
 
 // Set SEO from Prismic

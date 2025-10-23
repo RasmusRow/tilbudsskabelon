@@ -6,11 +6,7 @@
         :slices="homePage.slices" 
         :components="sliceComponents" 
       />
-      <template #fallback>
-        <Hero />
-        <USP class="my-12" />
-        <Info />
-      </template>
+      
     </ClientOnly>
     <div v-if="!homePage?.slices">
       <Hero />

@@ -31,6 +31,9 @@
             "usp": {
               "type": "SharedSlice"
             },
+            "info": {
+              "type": "SharedSlice"
+            },
             "rich_text": {
               "type": "SharedSlice"
             },
@@ -40,6 +43,9 @@
             "image": {
               "type": "SharedSlice"
             },
+            "gallery": {
+              "type": "SharedSlice"
+            },
             "quote_form": {
               "type": "SharedSlice"
             },
@@ -47,6 +53,9 @@
               "type": "SharedSlice"
             },
             "faq": {
+              "type": "SharedSlice"
+            },
+            "testimonial": {
               "type": "SharedSlice"
             },
             "contact_form": {

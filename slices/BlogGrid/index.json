@@ -1,0 +1,6 @@
+{
+  "id": "blog_grid",
+  "type": "SharedSlice",
+  "name": "BlogGrid",
+  "description": "Blog Grid slice with repeatable blog posts"
+}

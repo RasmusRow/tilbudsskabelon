@@ -4,16 +4,12 @@ import { defineAsyncComponent } from "vue";
 import { defineSliceZoneComponents } from "@prismicio/vue";
 
 export const components = defineSliceZoneComponents({
-  contactform: defineAsyncComponent(() => import("./ContactForm/index.vue")),
-  cta: defineAsyncComponent(() => import("./Cta/index.vue")),
-  faq: defineAsyncComponent(() => import("./Faq/index.vue")),
-  gallery: defineAsyncComponent(() => import("./Gallery/index.vue")),
-  guidelisting: defineAsyncComponent(() => import("./GuideListing/index.vue")),
-  hero: defineAsyncComponent(() => import("./Hero/index.vue")),
-  image: defineAsyncComponent(() => import("./Image/index.vue")),
-  info: defineAsyncComponent(() => import("./Info/index.vue")),
-  quoteform: defineAsyncComponent(() => import("./QuoteForm/index.vue")),
-  richtext: defineAsyncComponent(() => import("./RichText/index.vue")),
-  testimonial: defineAsyncComponent(() => import("./Testimonial/index.vue")),
-  usp: defineAsyncComponent(() => import("./Usp/index.vue")),
+  blog_grid: defineAsyncComponent(() => import("./BlogGrid/index.vue")),
+  cta: defineAsyncComponent(() => import("./CTA/CTA.vue")),
+  faq: defineAsyncComponent(() => import("./FAQ/FAQ.vue")),
+  hero: defineAsyncComponent(() => import("./HeroSlice/HeroSlice.vue")),
+  image: defineAsyncComponent(() => import("./Image/Image.vue")),
+  quote_form: defineAsyncComponent(() => import("./QuoteForm/QuoteForm.vue")),
+  rich_text: defineAsyncComponent(() => import("./RichText/RichText.vue")),
+  usp: defineAsyncComponent(() => import("./USP/USP.vue")),
 });

@@ -1,0 +1,52 @@
+{
+  "id": "blog_grid",
+  "type": "SharedSlice",
+  "name": "BlogGrid",
+  "description": "Blog Grid slice with repeatable blog posts",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default blog grid layout",
+      "imageUrl": "",
+      "primary": {
+        "blog_posts": {
+          "type": "Group",
+          "config": {
+            "label": "Blog Posts",
+            "repeat": true,
+            "fields": {
+              "blog_post": {
+                "type": "Link",
+                "config": {
+                  "label": "Blog Post",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    {
+                      "id": "blog-post",
+                      "fields": [
+                        "title",
+                        "description",
+                        "meta_image",
+                        "meta_description",
+                        "meta_title",
+                        "author",
+                        "publish_date",
+                        "excerpt",
+                        "featured_image"
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
